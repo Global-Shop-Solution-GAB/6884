@@ -1,0 +1,1789 @@
+﻿Program.Sub.ScreenSU.Start
+Gui.Progress..Create(BaseForm)
+Gui.Progress..Caption("Progress")
+Gui.Progress..Size(18210,1215)
+Gui.Progress..MinX(0)
+Gui.Progress..MinY(0)
+Gui.Progress..Position(0,0)
+Gui.Progress..BackColor(-2147483633)
+Gui.Progress..MousePointer(0)
+Gui.Progress..Event(UnLoad,Progress_UnLoad)
+Gui.Progress..AlwaysOnTop(False)
+Gui.Progress..FontName("Tahoma")
+Gui.Progress..FontSize(8.25)
+Gui.Progress..ControlBox(True)
+Gui.Progress..MaxButton(True)
+Gui.Progress..MinButton(True)
+Gui.Progress..Moveable(True)
+Gui.Progress..Sizeable(True)
+Gui.Progress..ShowInTaskBar(True)
+Gui.Progress..TitleBar(True)
+Gui.Progress.proBar.Create(ProgressBar)
+Gui.Progress.proBar.Size(17535,255)
+Gui.Progress.proBar.Position(255,330)
+Gui.Progress.proBar.Visible(True)
+Gui.Form..Create(BaseForm)
+Gui.Form..Caption("BOM Hours/ Cost")
+Gui.Form..Size(20835,11100)
+Gui.Form..MinX(0)
+Gui.Form..MinY(0)
+Gui.Form..Position(0,0)
+Gui.Form..BackColor(-2147483633)
+Gui.Form..MousePointer(0)
+Gui.Form..Event(UnLoad,Form_UnLoad)
+Gui.Form..AlwaysOnTop(False)
+Gui.Form..FontName("Tahoma")
+Gui.Form..FontSize(8.25)
+Gui.Form..ControlBox(True)
+Gui.Form..MaxButton(True)
+Gui.Form..MinButton(True)
+Gui.Form..Moveable(True)
+Gui.Form..Sizeable(True)
+Gui.Form..ShowInTaskBar(True)
+Gui.Form..TitleBar(True)
+Gui.Form.tabMain.Create(Tab)
+Gui.Form.tabMain.Size(20730,9840)
+Gui.Form.tabMain.Position(75,735)
+Gui.Form.tabMain.Enabled(True)
+Gui.Form.tabMain.Visible(True)
+Gui.Form.tabMain.Zorder(0)
+Gui.Form.tabMain.FontName("Tahoma")
+Gui.Form.tabMain.FontSize(8.25)
+Gui.Form.tabMain.Tabs(3)
+Gui.Form.tabMain.SetTab(0)
+Gui.Form.tabMain.Caption("BOM")
+Gui.Form.tabMain.SetTab(1)
+Gui.Form.tabMain.Caption("Router")
+Gui.Form.tabMain.SetTab(2)
+Gui.Form.tabMain.Caption("WC")
+Gui.Form.GSGC_WC.Create(GsGridControl)
+Gui.Form.GSGC_WC.Enabled(True)
+Gui.Form.GSGC_WC.Visible(True)
+Gui.Form.GSGC_WC.Zorder(0)
+Gui.Form.GSGC_WC.Size(20595,9315)
+Gui.Form.GSGC_WC.Position(15,45)
+Gui.Form.GSGC_WC.Anchor(15)
+Gui.Form.GSGC_WC.Parent("tabMain",2)
+Gui.Form.GSGC_Router.Create(GsGridControl)
+Gui.Form.GSGC_Router.Enabled(True)
+Gui.Form.GSGC_Router.Visible(True)
+Gui.Form.GSGC_Router.Zorder(0)
+Gui.Form.GSGC_Router.Size(20610,9315)
+Gui.Form.GSGC_Router.Position(30,30)
+Gui.Form.GSGC_Router.Parent("tabMain",1)
+Gui.Form.GSGC_Router.Anchor(15)
+Gui.Form.gsBom.Create(GsGridControl)
+Gui.Form.gsBom.Size(20685,9300)
+Gui.Form.gsBom.Position(0,60)
+Gui.Form.gsBom.Event(RowCellClick,gsBom_RowCellClick)
+Gui.Form.gsBom.Parent("tabMain",0)
+Gui.Form.gsBom.TabStop(True)
+Gui.Form.gsBom.TabIndex(44)
+Gui.Form.gsBom.Enabled(True)
+Gui.Form.gsBom.Visible(True)
+Gui.Form.gsBom.Zorder(0)
+Gui.Form.txtPart17.Create(TextBox,"",True,2475,300,0,75,315,True,0,"Arial",8,-2147483643,2)
+Gui.Form.txtPart17.MaxLength(17)
+Gui.Form.txtPart17.TabStop(True)
+Gui.Form.txtPart17.TabIndex(3)
+Gui.Form.txtDescr.Create(TextBox,"",True,2715,300,0,3585,315,True,0,"Arial",8,-2147483643,2)
+Gui.Form.txtDescr.MaxLength(30)
+Gui.Form.txtDescr.TabStop(True)
+Gui.Form.txtDescr.TabIndex(6)
+Gui.Form.lbl16.Create(Label,"Rev",True,285,210,0,2595,60,True,0,"Arial",8,-2147483633,0,0)
+Gui.Form.lbl16.BorderStyle(0)
+Gui.Form.txtRev.Create(TextBox,"",True,480,300,0,2580,315,True,0,"Arial",8,-2147483643,2)
+Gui.Form.txtRev.TabStop(True)
+Gui.Form.txtRev.TabIndex(4)
+Gui.Form.txtRev.MaxLength(20)
+Gui.Form.cmdBrowseBom.Create(Button)
+Gui.Form.cmdBrowseBom.Size(390,330)
+Gui.Form.cmdBrowseBom.Position(3105,285)
+Gui.Form.cmdBrowseBom.Caption("^")
+Gui.Form.cmdBrowseBom.Event(Click,cmdBrowseBom_Click)
+Gui.Form.cmdBrowseBom.TabStop(True)
+Gui.Form.cmdBrowseBom.TabIndex(5)
+Gui.Form.cmdBrowseBom.Enabled(True)
+Gui.Form.cmdBrowseBom.Visible(True)
+Gui.Form.cmdBrowseBom.Zorder(0)
+Gui.Form.cmdBrowseBom.FontName("Tahoma")
+Gui.Form.cmdBrowseBom.FontSize(8.25)
+Gui.Form.lbl3.Create(Label,"Description",True,810,210,0,3600,60,True,0,"Arial",8,-2147483633,0,0)
+Gui.Form.lbl3.BorderStyle(0)
+Gui.Form.lbl11.Create(Label,"Qty",True,255,210,0,6390,60,True,0,"Arial",8,-2147483633,0,0)
+Gui.Form.lbl11.BorderStyle(0)
+Gui.Form.txtQty.Create(TextBox,"1",True,660,300,0,6375,315,True,1,"Arial",8,-2147483643,2)
+Gui.Form.txtQty.NumericOnly(2)
+Gui.Form.lbl1.Create(Label,"Bom",True,315,210,0,90,60,True,0,"Arial",8,-2147483633,0,0)
+Gui.Form.lbl1.BorderStyle(0)
+Gui.Form.cmdLoad.Create(Button)
+Gui.Form.cmdLoad.Size(825,330)
+Gui.Form.cmdLoad.Position(7110,285)
+Gui.Form.cmdLoad.Caption("Load")
+Gui.Form.cmdLoad.Event(Click,cmdLoad_Click)
+Gui.Form.cmdLoad.TabStop(True)
+Gui.Form.cmdLoad.TabIndex(7)
+Gui.Form.cmdLoad.Enabled(True)
+Gui.Form.cmdLoad.Visible(True)
+Gui.Form.cmdLoad.Zorder(0)
+Gui.Form.cmdLoad.FontName("Tahoma")
+Gui.Form.cmdLoad.FontSize(8.25)
+Gui.Form.cmdExport.Create(Button)
+Gui.Form.cmdExport.Size(825,330)
+Gui.Form.cmdExport.Position(7995,285)
+Gui.Form.cmdExport.Caption("Export")
+Gui.Form.cmdExport.Event(Click,cmdExport_Click)
+Gui.Form.cmdExport.TabStop(True)
+Gui.Form.cmdExport.TabIndex(11)
+Gui.Form.cmdExport.Enabled(True)
+Gui.Form.cmdExport.Visible(True)
+Gui.Form.cmdExport.Zorder(0)
+Gui.Form.cmdExport.FontName("Tahoma")
+Gui.Form.cmdExport.FontSize(8.25)
+Gui.Form.cmdResetColumn.Create(Button)
+Gui.Form.cmdResetColumn.Size(1410,330)
+Gui.Form.cmdResetColumn.Position(8880,285)
+Gui.Form.cmdResetColumn.Caption("Reset Columns")
+Gui.Form.cmdResetColumn.Event(Click,cmdResetColumn_Click)
+Gui.Form.cmdResetColumn.Enabled(True)
+Gui.Form.cmdResetColumn.Visible(True)
+Gui.Form.cmdResetColumn.Zorder(0)
+Gui.Form.cmdResetColumn.FontName("Tahoma")
+Gui.Form.cmdResetColumn.FontSize(8.25)
+Gui.Form.optView.Create(Option)
+Gui.Form.optView.Size(765,255)
+Gui.Form.optView.Position(10350,345)
+Gui.Form.optView.Caption("View")
+Gui.Form.optView.Enabled(True)
+Gui.Form.optView.Visible(True)
+Gui.Form.optView.Zorder(0)
+Gui.Form.optView.FontName("Tahoma")
+Gui.Form.optView.FontSize(8.25)
+Gui.Form.optEdit.Create(Option)
+Gui.Form.optEdit.Size(855,255)
+Gui.Form.optEdit.Position(11055,345)
+Gui.Form.optEdit.Caption("Edit")
+Gui.Form.optEdit.Enabled(True)
+Gui.Form.optEdit.Visible(True)
+Gui.Form.optEdit.Zorder(0)
+Gui.Form.optEdit.FontName("Tahoma")
+Gui.Form.optEdit.FontSize(8.25)
+Gui.Form.lblLoading.Create(Label,"Loading...",False,705,210,0,11925,330,True,0,"Arial",8,-2147483633,0,0)
+Gui.Form.lblLoading.ForeColor(8034025)
+Gui.Form.lblLoading.BorderStyle(0)
+Gui.Form.txtBoldNode.Create(TextBox,"",False,2145,300,0,12840,240,True,0,"Arial",8,-2147483643,1)
+Gui.Form.proBarMainTab.Create(ProgressBar)
+Gui.Form.proBarMainTab.Size(2280,105)
+Gui.Form.proBarMainTab.Position(18210,375)
+Gui.Form.proBarMainTab.Visible(False)
+Program.Sub.ScreenSU.End
+
+Program.Sub.Preflight.Start
+v.Global.sUserID.Declare
+v.Global.sCurrentBom.Declare
+v.Global.bLoad.Declare
+v.Global.bSetupCrewSize.Declare
+v.Global.bLongPart.Declare
+v.Global.sCustomTable.Declare
+v.Global.sCustomTable_WC.Declare
+f.Intrinsic.String.Build("GCG_6884_{0}",v.Caller.User.Trim,v.Global.sCustomTable)
+f.Intrinsic.String.Build("GCG_6884_{0}_WC",v.Caller.User.Trim,v.Global.sCustomTable_WC)
+
+v.Global.iBSeq.Declare
+v.Global.sLoc.Declare
+Program.External.Include.Library("300011.lib")
+Program.Sub.Preflight.End
+
+Program.Sub.Main.Start
+'Bryan Pham
+'12/07/2022
+'Customer: Real Performance Machinery
+'REA030-61520220555-0
+'Scope: this tool provides a holistic view of how many hours they spent on a project (build a part), what the cost was and how many hours spent on each WC.
+
+F.Intrinsic.Control.Try
+	v.Local.sError.Declare
+	
+	F.ODBC.Connection!conx.OpenCompanyConnection
+	
+	'Get User ID used for Grid Options
+	F.Global.Security.GetUserID(v.Caller.User,v.Caller.CompanyCode,v.Global.sUserID)
+	F.Intrinsic.Control.CallSub(CheckLongPart)
+	F.Intrinsic.Control.CallSub(Check_Table)
+	F.Intrinsic.Control.CallSub(Create_All_Index)
+	'Check Bom Step Interval
+	f.Global.General.ReadOption("401096",3,0,v.Global.iBSeq)
+	'Initialize Grid and Options
+	f.Intrinsic.Control.CallSub("Initialize_controls")
+	
+	'Set default tab
+	gui.Form.tabMain.SetTab(0)
+	'Gui.Form.tabMain.TabVisible(1,False)
+	'gui.Form.tab1.SetTab(0)
+	
+	gui.Form..Show
+	f.Intrinsic.Control.CallSub("Set_Anchor")	
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.End
+F.Intrinsic.Control.EndTry
+Program.Sub.Main.End
+
+Program.Sub.UnLoad.Start
+f.Intrinsic.Control.Try
+	v.Local.sError.Declare
+
+	F.Intrinsic.Control.If(V.ODBC.conx.Exists,=,1)
+		F.ODBC.Connection!conx.close
+	F.Intrinsic.Control.EndIf
+	
+	F.Intrinsic.Control.If(V.ODBC.common.Exists,=,1)
+		F.ODBC.Connection!common.close
+	F.Intrinsic.Control.EndIf	
+	
+	f.Intrinsic.Control.End
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.End
+F.Intrinsic.Control.EndTry
+Program.Sub.UnLoad.End
+
+Program.Sub.Form_UnLoad.Start
+f.Intrinsic.Control.If(v.DataTable.Bom.Exists)
+	f.Intrinsic.Control.If(v.DataTable.Bom.RowCount,>,0,and,v.Global.bLoad,=,True)
+		'f.Intrinsic.Control.CallSub("Serialize")
+	f.Intrinsic.Control.EndIf	
+f.Intrinsic.Control.EndIf
+f.Intrinsic.Control.CallSub("Unload")
+Program.Sub.Form_UnLoad.End
+
+Program.Sub.Progress_UnLoad.Start
+gui.Progress..Visible(False)
+Program.Sub.Progress_UnLoad.End
+
+Program.Sub.Set_Anchor.Start
+F.Intrinsic.Control.Try
+	v.Local.sError.Declare
+	
+	'0 - None		1 - Top		2 - Bottom		4 - Left		8 - Right	
+	gui.Form.gsBom.Anchor(15)
+	gui.Form.proBarMainTab.Anchor(9)
+	gui.Form.tabMain.Anchor(15)
+	'gui.Form.tab1.Anchor(7)
+	'gui.Form.trvBom.Anchor(7)
+	'gui.Form.gsWCs.Anchor(7)
+	
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.End
+F.Intrinsic.Control.EndTry
+Program.Sub.Set_Anchor.End
+
+Program.Sub.Initialize_controls.Start
+f.Intrinsic.Control.Try
+	v.Local.sError.Declare	
+	
+	gui.Form.optView.Value(True)
+	f.Data.DataTable.Create("WC",True)
+	f.Data.DataTable.AddColumn("WC","WC","String","")
+	f.Data.DataTable.AddColumn("WC","Description","String","")
+	f.Data.DataTable.AddColumn("WC","Delete","String","Delete")
+	
+	f.Data.DataView.Create("WC","dvWC")
+'	gui.Form.gsWCs.AddGridviewFromDatatable("gvWC","WC")
+'	gui.Form.gsWCs.ColumnEdit("gvWC","Delete","EditorButton","Delete")
+'	gui.Form.gsWCs.SetColumnProperty("gvWC","Delete","HeaderHAlignment","Center")
+'	gui.Form.gsWCs.SetColumnProperty("gvWC","Delete","AllowEdit",False)
+'	gui.Form.gsWCs.SetColumnProperty("gvWC","Delete","ReadOnly",True)
+'	gui.Form.gsWCs.MainView("gvWC")		
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.End
+F.Intrinsic.Control.EndTry
+Program.Sub.Initialize_controls.End
+
+Program.Sub.cmdBrowseBom_Click.Start
+'Browse a BOM
+f.Intrinsic.Control.Try
+	v.Local.sError.Declare
+	v.Local.sRet.Declare
+	v.Local.sHold.Declare
+
+	F.Intrinsic.UI.SetBrowserHotTypeAhead(True)	
+	Function.Intrinsic.UI.CommonBrowser(3010,"",v.Local.sRet)	
+	F.Intrinsic.Control.If(v.Local.sRet.IsCancel,=,False)
+		F.Intrinsic.String.Split(v.Local.sRet,"*!*",v.Local.sRet)
+		gui.Form.txtPart17.Text(v.Local.sRet(0))
+		gui.Form.txtRev.Text(v.Local.sRet(1))
+		gui.Form.txtDescr.Text(v.Local.sRet(2))
+	F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.End
+F.Intrinsic.Control.EndTry
+Program.Sub.cmdBrowseBom_Click.End
+
+Program.Sub.cmdLoad_Click.Start
+'Load BOM to the grid and at the same time build the treeview
+
+f.Intrinsic.Control.Try
+	v.Local.sError.Declare
+	v.Local.sSQL.Declare
+	v.Local.sRet.Declare
+	v.Local.sWCs.Declare
+	v.Local.sPart.Declare
+	v.Local.iCnt.Declare
+	v.Local.i2.Declare
+	v.Local.sBomNode.Declare
+	
+	v.Local.sVarOvhd.Declare
+	v.Local.sOvhdAccountedCrewSize.Declare
+	v.Local.sLaborAccountedCrewSize.Declare		
+	v.Local.sTemp.Declare
+	v.Local.i3.Declare
+	v.Local.fAvgHour.Declare
+	v.Local.fWO_Qty.Declare
+	v.Local.iCurrentBOMLevel.Declare
+	v.Local.iUpperBOMLevel.Declare
+	v.Local.sParentBOMNode.Declare
+	
+	f.Intrinsic.Control.If(v.DataTable.Bom.Exists)
+		f.Intrinsic.Control.If(v.DataTable.Bom.RowCount,>,0)
+			f.Intrinsic.Control.If(v.Global.bLoad)
+				'f.Intrinsic.Control.CallSub("Serialize")
+			f.Intrinsic.Control.EndIf
+		f.Intrinsic.Control.EndIf	
+	f.Intrinsic.Control.EndIf		
+	
+	'Check Qty
+	f.Intrinsic.Control.If(v.Screen.Form!txtQty.Text.Trim,=,"")
+		f.Intrinsic.UI.Msgbox("Please enter quantity.","Attention")
+		f.Intrinsic.Control.ExitSub
+	f.Intrinsic.Control.EndIf
+	
+	'Turn on indicators
+	gui.Form.lblLoading.Visible(True)
+	
+	'Make invisible the grid and treeview
+	gui.Form.gsBom.Visible(False)
+	'gui.Form.trvBom.Visible(False)
+	
+	'Set default Tab to Bom tab
+	gui.Form.tabMain.SetTab(0)
+	
+	f.Intrinsic.String.GSSPartString(v.Screen.Form!txtPart17.Text.Trim,v.Screen.Form!txtRev.Text.Trim,v.Local.sPart)
+	
+	f.Intrinsic.Control.If(v.DataTable.Bom.Exists)
+		f.Data.DataTable.Close("Bom")
+	f.Intrinsic.Control.EndIf
+	
+	f.Intrinsic.Control.If(v.DataTable.dtBOM.Exists)
+		f.Data.DataTable.Close("dtBOM")
+	f.Intrinsic.Control.EndIf
+	
+	f.Intrinsic.Control.If(v.DataTable.dtRouter.Exists)
+		f.Data.DataTable.Close("dtRouter")
+	f.Intrinsic.Control.EndIf
+	
+	
+	
+	f.Intrinsic.Control.If(v.DataTable.dtBOM_AveHrs.Exists,=,true)
+		f.Data.Datatable.Close("dtBOM_AveHrs")
+	f.Intrinsic.Control.EndIf
+
+	
+	f.Intrinsic.String.Build("Delete from {0}",v.Global.sCustomTable,v.Local.sSQL)
+	f.ODBC.Connection!conx.Execute(v.Local.sSQL)
+'	f.Intrinsic.String.Build("select cast(sum(A.HOURS_WORKED)/(Select sum(QTY_ORDER) from JOB_HEADER where PART = '{0}') as float) from JOB_DETAIL A left join JOB_HEADER B on A.JOB = B.JOB and A.SUFFIX = B.SUFFIX where B.PART = '{0}' group by B.PART;",v.Local.sPart,v.Local.sSQL)
+'	f.ODBC.Connection!conx.ExecuteAndReturn(v.Local.sSQL,v.Local.fAvgHour)
+
+	f.Data.DataTable.Create("Bom",True)
+	f.Data.DataTable.AddColumn("Bom","TopParent","String")
+	f.Data.DataTable.AddRow("Bom","TopParent",v.Local.sPart)
+	f.Data.DataTable.AddColumn("Bom","BomSeq","String","0000")
+	f.Data.DataTable.AddExpressionColumn("Bom","PARENT","String","TopParent")
+	f.Data.DataTable.AddExpressionColumn("Bom","Part","String","TopParent")
+	f.Data.DataTable.AddColumn("Bom","LevelBom","String","0")
+	f.Data.DataTable.AddColumn("Bom","Quantity","Float",1)
+	f.Data.DataTable.AddColumn("Bom","BOM_Qty","Float",1)
+	f.Data.DataTable.AddColumn("Bom","Position","String","000000000000000000000000000000000")
+	f.Data.DataTable.AddColumn("Bom","Position2","String","0")
+	f.Data.DataTable.AddColumn("Bom","ParentPosition","String","000000000000000000000000000000000")
+	f.Data.DataTable.AddColumn("Bom","BomNode","String","0")
+	f.Data.Datatable.AddColumn("Bom","PROD_HRS","Float")
+	f.Data.Datatable.AddColumn("Bom","PROD_HRS_TEMP","Float")
+	f.Data.Datatable.AddColumn("Bom","UM_INVENTORY","String")
+	f.Data.Datatable.AddColumn("Bom","CATEGORY","String")
+	f.Data.Datatable.AddColumn("Bom","SOURCE","String")
+	f.Data.Datatable.AddColumn("Bom","FREQUENCY","Float")
+	f.Data.Datatable.AddColumn("Bom","Cost","Float")
+	f.Data.Datatable.AddColumn("Bom","Cost2","Float")
+	f.Data.Datatable.AddColumn("Bom","Extension2","Float")
+	
+	
+	f.Data.Datatable.SaveToDB("Bom","conx",v.Global.sCustomTable,,128,"TopParent@!@TopParent*!*BOMSeq@!@BOMSeq*!*PARENT@!@PARENT*!*PART@!@PART*!*LevelBOM@!@LevelBOM*!*Quantity@!@Quantity*!*Position@!@Position*!*Position2@!@Position2*!*ParentPosition@!@ParentPosition*!*BOMNode@!@BOMNode*!*PROD_HRS@!@PROD_HRS*!*PROD_HRS_TEMP@!@PROD_HRS_TEMP*!*UM_INVENTORY@!@UM_INVENTORY*!*CATEGORY@!@CATEGORY*!*SOURCE@!@SOURCE*!*FREQUENCY@!@FREQUENCY*!*Cost@!@Cost*!*Cost2@!@Cost2*!*Extension2@!@Extension2")
+	'f.Data.Datatable.Merge("Bom","dtBOM_AveHrs",True,2)
+	f.Intrinsic.UI.InvokeWaitDialog("Calculating production hours...","Please wait")
+
+	
+	f.Intrinsic.Control.For(v.Local.iCnt,0,7,1)
+		f.Intrinsic.Math.Add(v.Local.iCnt,1,v.Local.i2)
+		f.Intrinsic.Control.If(v.Local.iCnt,=,0)	
+			f.Intrinsic.String.Build("Convert(Convert(m.Sequence_Bom,SQL_Integer)/{0},SQL_Char) as BomNode",v.Global.iBSeq,v.Local.sBomNode)
+		f.Intrinsic.Control.Else
+			f.Intrinsic.String.Build("g.BomNode + '.' + Convert(Convert(m.Sequence_Bom,SQL_Integer)/{0},SQL_Char) as BomNode",v.Global.iBSeq,v.Local.sBomNode)
+		f.Intrinsic.Control.EndIf
+		
+		f.Intrinsic.String.Build("insert into {3} (SELECT g.TopParent,m.Sequence_Bom as BomSeq,m.Parent,RTRIM(m.Part) as PART,'{0}' as levelBom,If(m.quantity = 0 and IsNull(m.Frequency,0) > 0,1,m.Quantity) as Quantity ,Left(g.Position2 + m.Sequence_Bom + '000000000000000000000000000000000',33)  as Position ,g.Position2 + m.Sequence_Bom as Position2 ,g.Position as ParentPosition,{2},cast(0 as float) as PROD_HRS , cast(0 as float) as PROD_HRS_TEMP,cast(0 as float) as AVE_PROD_HRS,m.UM_Inventory,m.Category,m.Source,m.Frequency,IsNull(d.Cost,0) as Cost,  IsNull(d.Cost,0) as Cost2,(IsNull(d.Cost,0) * m.Quantity) as Extension2,cast(0 as float) as Prod_Hrs_Per_Part,cast(0 as float) as Ave_Hrs_Per_Part from {3} g left join Bom_Mstr m on g.Part = m.Parent left join (Select part,Cost from Inventory_Cost) d on m.Part = d.Part where g.LevelBom = '{1}' and m.sequence_bom <> '0000'  order by g.TopParent,m.Parent,m.sequence_bom);",v.Local.i2,v.Local.iCnt,v.Local.sBomNode,v.Global.sCustomTable,v.Local.sSQL)
+		
+'		f.Data.Datatable.CreateFromSQL("dtBOM_AveHrs_Temp","conx",v.Local.sSQL)
+'		number
+'		
+'		f.Data.Datatable.Merge("dtBOM_AveHrs_Temp","dtBOM_AveHrs",True,2)
+'		f.Data.Datatable.Close("dtBOM_AveHrs_Temp")	
+		f.ODBC.Connection!conx.Execute(v.Local.sSQL)
+	f.Intrinsic.Control.Next(v.Local.iCnt)
+	
+	'fill in with ave. hrs per part
+	f.Intrinsic.String.Build("Select TopParent,BOMSeq,PARENT,RTRIM(PART) as PART,LevelBOM,Quantity,Position,Position2,ParentPosition,BOMNode,PROD_HRS,PROD_HRS_TEMP,UM_INVENTORY,CATEGORY,SOURCE,FREQUENCY,Cost,Cost2,Extension2,Prod_Hrs_Per_Part,Ave_Hrs_Per_Part from {0}",v.Global.sCustomTable,v.Local.sSQL)
+	f.Data.Datatable.CreateFromSQL("dtBOM_AveHrs","conx",v.Local.sSQL)
+	
+	'f.Data.Dictionary.CreateFromSQL("dAvgHours","conx","select RTRIM(y.PART),  cast(sum(x.HOURS_WORKED)/(Select sum(QTY_ORDER) from V_JOB_HEADER where DATE_CLOSED <> '1900-01-01') as float) from V_JOB_DETAIL x left join V_JOB_HEADER y on y.JOB = x.JOB and y.SUFFIX = x.SUFFIX where x.machine <> ''  and y.DATE_CLOSED <> '1900-01-01' and x.LMO = 'L' group by y.PART")
+
+	f.Data.Datatable.CreateFromSQL("dtAvgHours","conx","select RTRIM(y.PART) as PART,  cast((sum(isnull(x.HOURS_ACTUAL,0)) ) as float) as HRS_WORKED, cast(0 as float) as WO_QTY from V_JOB_OPERATIONS x left join V_JOB_HEADER y on y.JOB = x.JOB and y.SUFFIX = x.SUFFIX where x.PART <> ''  and y.DATE_CLOSED <> '1900-01-01' and x.LMO = 'L' and x.HOURS_ACTUAL > 0 group by y.PART")
+	'BP - 05/12/2023 - they emailed and wanted to use completed qty
+	
+	f.Data.Dictionary.CreateFromSQL("dWO_QTY","conx","select RTRIM(PART),  sum(QTY_COMPLETED) from V_JOB_HEADER where DATE_CLOSED <> '1900-01-01' and JOB + SUFFIX in (select JOB+SUFFIX from JOB_OPERATIONS where HOURS_ACTUAL > 0) group by PART;")
+	f.Data.Dictionary.SetDefaultReturn("dWO_QTY",0)
+	f.Data.Datatable.FillFromDictionary("dtAvgHours","dWO_QTY","PART","WO_QTY")
+	f.Data.Dictionary.Close("dWO_QTY")
+	f.Data.Datatable.AddExpressionColumn("dtAvgHours","AVE_PROD_HRS","Float","IIF(WO_QTY = 0,0,[HRS_WORKED] / [WO_QTY])")
+	
+	f.Data.Dictionary.createFromDataTable("dAvgHours","dtAvgHours","PART","AVE_PROD_HRS")
+	f.Data.Dictionary.SetDefaultReturn("dAvgHours",0)
+	f.Data.Datatable.FillFromDictionary("dtBOM_AveHrs","dAvgHours","PART","PROD_HRS")
+	f.Data.Datatable.FillFromDictionary("dtBOM_AveHrs","dAvgHours","PART","PROD_HRS_TEMP")
+	f.Data.Datatable.FillFromDictionary("dtBOM_AveHrs","dAvgHours","PART","Prod_Hrs_Per_Part")
+	f.Data.Datatable.FillFromDictionary("dtBOM_AveHrs","dAvgHours","PART","Ave_Hrs_Per_Part")
+	f.Data.Dictionary.Close("dAvgHours")
+	f.Data.Datatable.Close("dtAvgHours")
+	
+	f.Data.Datatable.AddExpressionColumn("dtBOM_AveHrs","AVE_PROD_HRS","Float","[PROD_HRS] * [Quantity]")
+	
+	f.Intrinsic.String.Build("Delete from {0}",v.Global.sCustomTable,v.Local.sSQL)
+	f.ODBC.Connection!conx.Execute(v.Local.sSQL)
+	f.Data.Datatable.SaveToDB("dtBOM_AveHrs","conx",v.Global.sCustomTable,,128,"TopParent@!@TopParent*!*BOMSeq@!@BOMSeq*!*PARENT@!@PARENT*!*PART@!@PART*!*LevelBOM@!@LevelBOM*!*Quantity@!@Quantity*!*Position@!@Position*!*Position2@!@Position2*!*ParentPosition@!@ParentPosition*!*BOMNode@!@BOMNode*!*PROD_HRS@!@PROD_HRS*!*PROD_HRS_TEMP@!@PROD_HRS_TEMP*!*UM_INVENTORY@!@UM_INVENTORY*!*CATEGORY@!@CATEGORY*!*SOURCE@!@SOURCE*!*FREQUENCY@!@FREQUENCY*!*Cost@!@Cost*!*Cost2@!@Cost2*!*Extension2@!@Extension2*!*AVE_PROD_HRS@!@AVE_PROD_HRS")
+	
+
+	'==================================================================================
+		'BP
+	f.Intrinsic.String.Build("Select RTRIM(ROUTER) as ROUTER,LINE_ROUTER,RTRIM(PART_WC_OUTSIDE) as PART_WC_OUTSIDE,DESC_RT_LINE, LMO, SET_UP,RUN_TIME,RATE,UM_INVENTORY,LEAD_TIME, PROJ_GROUP from V_ROUTER_LINE where ROUTER = '{0}'",v.Local.sPart,v.Local.sSQL)
+	f.Data.DataTable.CreateFromSQL("dtRouter","conx",v.Local.sSQL,true)
+	f.Data.DataTable.AddColumn("dtRouter","Quantity","Float")	
+	f.Data.Datatable.SetValue("dtRouter",-1,"Quantity",v.Screen.Form!txtQty.Text)
+	f.Data.DataTable.AddExpressionColumn("dtRouter","TotalRunTime","float","IIF(LMO = 'L',RUN_TIME * Quantity + SET_UP,0)")
+	f.Data.DataTable.AddExpressionColumn("dtRouter","HoursPerPart","float","TotalRunTime/Quantity")
+	f.Data.DataTable.AddColumn("dtRouter","Hrs_L","Float")
+	
+	'BP - add inventory_mst2.hrs_standard
+	f.Intrinsic.Control.If(v.Global.bLongPart)
+		F.Data.DataTable.AddDisplayPartColumn("dtRouter",0,"PART_WC_OUTSIDE","DISPLAY_PART")
+	f.Intrinsic.Control.Else
+		F.Data.DataTable.CopyColumn("dtRouter","PART_WC_OUTSIDE","DISPLAY_PART")
+	f.Intrinsic.Control.EndIf
+	
+	f.Intrinsic.Control.If(v.DataTable.dtWC_Child.Exists,=,True)
+		f.Data.DataTable.Close("dtWC_Child")
+	f.Intrinsic.Control.EndIf
+	f.Data.DataTable.Create("dtWC_Child",true)
+	f.Data.DataTable.AddColumn("dtWC_Child","TopParent","String")
+	f.Data.DataTable.AddColumn("dtWC_Child","BomSeq","String")
+	f.Data.DataTable.AddColumn("dtWC_Child","PARENT","String")
+	f.Data.DataTable.AddColumn("dtWC_Child","Part","String")
+	f.Data.DataTable.AddColumn("dtWC_Child","LevelBom","String")
+	f.Data.DataTable.AddColumn("dtWC_Child","Quantity","Float")
+	f.Data.DataTable.AddColumn("dtWC_Child","Position","String")
+	f.Data.DataTable.AddColumn("dtWC_Child","Position2","String")
+	f.Data.DataTable.AddColumn("dtWC_Child","ParentPosition","String")
+	f.Data.DataTable.AddColumn("dtWC_Child","BomNode","String")
+	f.Data.DataTable.AddColumn("dtWC_Child","WC","String")
+	f.Data.DataTable.AddColumn("dtWC_Child","WC_Desc","String")
+	f.Data.DataTable.AddColumn("dtWC_Child","Act_Hrs","Float")
+	f.Data.DataTable.AddColumn("dtWC_Child","Act_Hrs_Temp","Float")
+	f.Data.DataTable.AddColumn("dtWC_Child","Act_Ave_Hrs","Float")
+	f.Data.DataTable.AddColumn("dtWC_Child","Est_Hrs","Float")
+	f.Data.DataTable.AddColumn("dtWC_Child","Est_Hrs_Temp","Float")
+	f.Data.DataTable.AddColumn("dtWC_Child","Est_Ave_Hrs","Float")
+	f.Data.DataTable.AddColumn("dtWC_Child","Prod_Hrs_Per_Part","Float")
+	f.Data.DataTable.AddColumn("dtWC_Child","Ave_Hrs_Per_Part","Float")
+	f.Data.DataTable.AddColumn("dtWC_Child","ORPHAN_NODE","Boolean")
+
+	f.Data.DataTable.AddColumn("dtWC_Child","Ord","Long",0)
+	
+	f.Intrinsic.Control.If(v.DataTable.dtRaw_Data.Exists,=,True)
+		f.Data.DataTable.Close("dtRaw_Data")
+	f.Intrinsic.Control.EndIf
+	f.Data.DataTable.Create("dtRaw_Data",true)
+	f.Data.DataTable.AddColumn("dtRaw_Data","Job","String")
+	f.Data.DataTable.AddColumn("dtRaw_Data","Suffix","String")
+	f.Data.DataTable.AddColumn("dtRaw_Data","Seq","String")
+	f.Data.DataTable.AddColumn("dtRaw_Data","Part","String")
+	f.Data.DataTable.AddColumn("dtRaw_Data","WC","String")
+	f.Data.DataTable.AddColumn("dtRaw_Data","WC_Desc","String")
+	f.Data.DataTable.AddColumn("dtRaw_Data","Pieces","Float")
+	f.Data.DataTable.AddColumn("dtRaw_Data","Hours","Float")
+	f.Data.DataTable.AddColumn("dtRaw_Data","Est_Hours","Float")
+	f.Data.DataTable.AddColumn("dtRaw_Data","Act_Hrs_Per_Part","Float")
+	f.Data.DataTable.AddColumn("dtRaw_Data","Est_Hrs_Per_Part","Float")
+	f.Data.DataTable.AddColumn("dtRaw_Data","Ord","Long",0)
+	
+	'calculate prod hours from WCs
+	F.Intrinsic.String.Build("Select TopParent,BomSeq,PARENT,Position,Position2,ParentPosition, Case when LevelBom = '0' then '0********' when LevelBom = '1' then '1*******' when LevelBom = '2' then ' 2******' when LevelBom = '3' then '  3*****' when LevelBom = '4' then '   4****' when LevelBom = '5' then '    5***' when LevelBom = '6' then '     6**' when LevelBom = '7' then '      7*' when LevelBom = '8' then '       8' end as LevelChar,Convert(LevelBom,SQL_Integer) as LevelBom,BomNode,rtrim(g.Part) as Part,'' as Description,UM_Inventory,Category,Source,Quantity,PROD_HRS, cast(0 as float) as ToT_Hrs,IsNull(Frequency,0) as Frequency,cast(0 as float) Unit_Cost from {1} g where  TopParent = '{0}' Order by Position",v.Local.sPart.PSQLFriendly,v.Global.sCustomTable,v.Local.sSQL)
+	
+	f.Data.DataTable.CreateFromSQL("dtBOM","conx",v.Local.sSQL,true)
+	
+	'BP - 06/06/2023
+
+	f.Intrinsic.Control.For(v.Local.iCnt,0,v.DataTable.dtBOM.RowCount--,1)
+		
+		f.Intrinsic.UI.ChangeWaitStatus("Calculating production hours...",v.Local.iCnt,0,v.DataTable.dtBOM.RowCount--)
+		f.Intrinsic.Control.If(v.DataTable.dtSum_WC_Child.Exists,=,True)
+			f.Data.DataTable.Close("dtSum_WC_Child")
+		f.Intrinsic.Control.EndIf
+		
+
+		v.Local.sPart.Set(v.DataTable.dtBOM(v.Local.iCnt).PART!FIELDVALTRIM)
+
+		f.Intrinsic.String.Build("select isnull(sum(QTY_COMPLETED),0) from V_JOB_HEADER where RTRIM(PART) = '{0}' and DATE_CLOSED <> '1900-01-01' and JOB+SUFFIX in (Select JOB+SUFFIX from  V_JOB_OPERATIONS group by JOb,SUFFIX having sum(HOURS_ACTUAL) > 0)",v.Local.sPart.PSQLFriendly,v.Local.sSQL)
+		f.ODBC.Connection!conx.ExecuteAndReturn(v.Local.sSQL,v.Local.fWO_Qty)
+		f.Intrinsic.Control.If(v.Local.fWO_Qty,<>,0)
+			'f.Intrinsic.String.Build("select RTRIM(A.PART) as WC,isnull(sum(A.HOURS_ACTUAL),0) as HOURS_ACTUAL,isnull(sum(A.HOURS_ESTIMATED),0) as HOURS_ESTIMATED from V_JOB_OPERATIONS A left join V_JOB_HEADER B on A.JOB = B.JOB and A.SUFFIX = B.SUFFIX where RTRIM(b.PART) = '{0}' and A.LMO = 'L' and B.DATE_CLOSED <> '1900-01-01' and A.PART <> '' group by A.PART",v.Local.sPart.PSQLFriendly,v.Local.sSQL)
+			
+			f.Intrinsic.String.Build("select RTRIM(A.PART) as WC,isnull(sum(A.HOURS_ACTUAL),0) as HOURS_ACTUAL,isnull(sum(A.HOURS_ESTIMATED),0) as HOURS_ESTIMATED from V_JOB_OPERATIONS A left join V_JOB_HEADER B on A.JOB = B.JOB and A.SUFFIX = B.SUFFIX where RTRIM(b.PART) = '{0}' and A.LMO = 'L' and B.DATE_CLOSED <> '1900-01-01' and A.HOURS_ACTUAL > 0 group by A.PART",v.Local.sPart.PSQLFriendly,v.Local.sSQL)
+		
+			f.Intrinsic.Control.If(v.DataTable.dtWC_Hrs.Exists,=,True)
+				f.Data.Datatable.Close("dtWC_Hrs")
+			f.Intrinsic.Control.EndIf
+			
+			f.Data.Datatable.CreateFromSQL("dtWC_Hrs","conx",v.Local.sSQL,true)
+			f.Data.Datatable.AddColumn("dtWC_Hrs","Qty","float",v.Local.fWO_Qty)
+			f.Data.Datatable.AddExpressionColumn("dtWC_Hrs","Ave_Act_Hrs","Float","[HOURS_ACTUAL] / [Qty]")
+			f.Data.Datatable.AddExpressionColumn("dtWC_Hrs","Ave_Est_Hrs","Float","[HOURS_ESTIMATED] / [Qty]")
+		
+			f.Intrinsic.Control.For(v.Local.i2,0,v.DataTable.dtWC_Hrs.RowCount--,1)
+				f.Data.DataTable.AddRow("dtWC_Child","TopParent",v.DataTable.dtBOM(v.Local.iCnt).TopParent!FIELDVALTRIM,"BomSeq",v.DataTable.dtBOM(v.Local.iCnt).BomSeq!FIELDVALTRIM,"PARENT",v.DataTable.dtBOM(v.Local.iCnt).PARENT!FIELDVALTRIM,"Part",v.DataTable.dtBOM(v.Local.iCnt).Part!FIELDVALTRIM,"LevelBom",v.DataTable.dtBOM(v.Local.iCnt).LevelBom!FIELDVALTRIM,"Quantity",v.DataTable.dtBOM(v.Local.iCnt).Quantity!FIELDVALFLOAT,"Position",v.DataTable.dtBOM(v.Local.iCnt).Position!FIELDVALTRIM,"Position2",v.DataTable.dtBOM(v.Local.iCnt).Position2!FIELDVALTRIM,"ParentPosition",v.DataTable.dtBOM(v.Local.iCnt).ParentPosition!FIELDVALTRIM,"BomNode",v.DataTable.dtBOM(v.Local.iCnt).BomNode!FIELDVALTRIM, "WC",v.DataTable.dtWC_Hrs(v.Local.i2).WC!FIELDVALTRIM,"Act_Hrs",v.DataTable.dtWC_Hrs(v.Local.i2).Ave_Act_Hrs!FIELDVALFloat,"Act_Hrs_Temp",v.DataTable.dtWC_Hrs(v.Local.i2).Ave_Act_Hrs!FIELDVALFloat,"Act_Ave_Hrs",v.DataTable.dtWC_Hrs(v.Local.i2).Ave_Act_Hrs!FIELDVALFloat,"Est_Hrs",v.DataTable.dtWC_Hrs(v.Local.i2).Ave_Est_Hrs!FIELDVALFloat,"Est_Hrs_Temp",v.DataTable.dtWC_Hrs(v.Local.i2).Ave_Est_Hrs!FIELDVALFloat,"Est_Ave_Hrs",v.DataTable.dtWC_Hrs(v.Local.i2).Ave_Est_Hrs!FIELDVALFloat)
+			f.Intrinsic.Control.Next(v.Local.i2)
+			
+		f.Intrinsic.Control.EndIf
+		
+		
+		f.Intrinsic.Control.If(v.DataTable.dtSum_WC.Exists,=,True)
+			f.Data.DataTable.Close("dtSum_WC")
+		f.Intrinsic.Control.EndIf
+		
+	f.Intrinsic.Control.Next(v.Local.iCnt)
+	
+	f.Intrinsic.String.Build("Delete from {0}",v.Global.sCustomTable_WC,v.Local.sSQL)
+	f.ODBC.Connection!conx.Execute(v.Local.sSQL)
+	
+	f.Data.Datatable.SetValue("dtWC_Child",-1,"ORPHAN_NODE","False")
+	f.Data.Datatable.SaveToDB("dtWC_Child","conx",v.Global.sCustomTable_WC,,128,"TopParent@!@TopParent*!*BOMSeq@!@BOMSeq*!*PARENT@!@PARENT*!*PART@!@PART*!*LevelBOM@!@LevelBOM*!*Quantity@!@Quantity*!*Position@!@Position*!*Position2@!@Position2*!*ParentPosition@!@ParentPosition*!*BOMNode@!@BOMNode*!*WC@!@WC*!*Act_Hrs@!@Act_Hrs*!*Act_Hrs_Temp@!@Act_Hrs_Temp*!*Act_Ave_Hrs@!@Act_Ave_Hrs*!*Est_Hrs@!@Est_Hrs*!*Est_Hrs_Temp@!@Est_Hrs_Temp*!*Est_Ave_Hrs@!@Est_Ave_Hrs*!*ORPHAN_NODE@!@ORPHAN_NODE")
+	
+	f.Intrinsic.String.Build("Update {0} set Act_Ave_Hrs = Act_Hrs * Quantity, Act_Hrs_Temp = Act_Hrs * Quantity",v.Global.sCustomTable_WC,v.Local.sSQL)
+	f.ODBC.Connection!conx.Execute(v.Local.sSQL)
+	
+	f.Intrinsic.Control.If(v.DataTable.dtWC_Temp.Exists,=,True)
+		f.Data.DataTable.Close("dtWC_Temp")
+	f.Intrinsic.Control.EndIf
+	
+	
+	'insert 0 hours row if WC does not have parent record
+	f.Intrinsic.String.Build("Select * from {0} order by LevelBOM desc",v.Global.sCustomTable_WC,v.Local.sSQL)
+	f.Data.Datatable.CreateFromSQL("dtWC_Temp","conx",v.Local.sSQL,true)
+	
+	f.Intrinsic.Control.For(v.Local.iCnt,0,v.DataTable.dtWC_Temp.RowCount--,1)
+		f.Intrinsic.Control.If(v.DataTable.dtWC_Temp(v.Local.iCnt).LevelBOM!FieldValFloat,>,0)
+	
+			f.Intrinsic.Math.Sub(v.DataTable.dtWC_Temp(v.Local.iCnt).LevelBOM!FieldValFloat,1,v.Local.iUpperBOMLevel)
+			f.Intrinsic.Control.If(v.DataTable.dtWC_Temp(v.Local.iCnt).LevelBOM!FieldValFloat,=,4,and,v.DataTable.dtWC_Temp(v.Local.iCnt).PARENT!FieldValTrim,=,"105-A-0008       D")
+			
+			
+			f.Intrinsic.Control.EndIf
+			
+			f.Intrinsic.String.Split(v.DataTable.dtWC_Temp(v.Local.iCnt).BomNode!FieldValTrim,".",v.Local.sTemp)
+			f.Intrinsic.Math.Sub(v.Local.sTemp.UBound,1,v.Local.i3)
+			f.Intrinsic.Control.For(v.Local.i2,0,v.Local.i3,1)
+				
+				f.Intrinsic.Control.If(v.Local.i2,=,0)
+					v.Local.sParentBOMNode.Set(v.Local.sTemp(v.Local.i2))
+				f.Intrinsic.Control.Else
+					f.Intrinsic.String.Build("{0}.{1}",v.Local.sParentBOMNode,v.Local.sTemp(v.Local.i2),v.Local.sParentBOMNode)
+				f.Intrinsic.Control.EndIf
+				
+			f.Intrinsic.Control.Next(v.Local.i2)
+			
+			f.Intrinsic.Control.If(v.Local.iUpperBOMLevel,=,0)
+				v.Local.sParentBOMNode.Set("0")
+			f.Intrinsic.Control.EndIf
+			'check if it has same WC on the upper level
+			f.Intrinsic.String.Build("select ParentPosition from {0} where RTRIM(ParentPosition) = (Select TOP 1 RTRIM(Position) from {0} where levelBOM = {1} and RTRIM(PART) = '{2}' and RTRIM(WC) = '{3}' and RTRIM(BomNode) = '{5}') and RTRIM(Position) = '{4}' ;",v.Global.sCustomTable_WC,v.Local.iUpperBOMLevel,v.DataTable.dtWC_Temp(v.Local.iCnt).PARENT!FieldValTrim,v.DataTable.dtWC_Temp(v.Local.iCnt).WC!FieldValTrim,v.DataTable.dtWC_Temp(v.Local.iCnt).Position!FieldValTrim,v.Local.sParentBOMNode,v.Local.sSQL)
+
+			f.ODBC.Connection!conx.ExecuteAndReturn(v.Local.sSQL,v.Local.sRet)
+			'if it does not. add a fake record for that WC
+			f.Intrinsic.Control.If(v.Ambient.ExecuteAndReturnEOF,=,True)
+				
+				f.Intrinsic.Control.If(v.Local.iUpperBOMLevel,<>,0)
+					f.Intrinsic.String.Build("select ParentPosition,PARENT,Quantity,BOMSeq,BomNode from {0} where levelBOM = {1} and RTRIM(PART) = '{2}' and RTRIM(BOMNode) = '{3}';",v.Global.sCustomTable,v.Local.iUpperBOMLevel,v.DataTable.dtWC_Temp(v.Local.iCnt).PARENT!FieldValTrim,v.Local.sParentBOMNode.Trim,v.Local.sSQL)
+				f.Intrinsic.Control.Else
+					f.Intrinsic.String.Build("select ParentPosition,PARENT,Quantity,BOMSeq,BomNode from {0} where levelBOM = {1} and RTRIM(PART) = '{2}';",v.Global.sCustomTable,v.Local.iUpperBOMLevel,v.DataTable.dtWC_Temp(v.Local.iCnt).PARENT!FieldValTrim,v.Local.sSQL)
+				f.Intrinsic.Control.EndIf
+				
+				f.ODBC.Connection!conx.ExecuteAndReturn(v.Local.sSQL,v.Local.sRet)
+				f.Intrinsic.String.Split(v.Local.sRet,"*!*",v.Local.sRet)
+				'need to add fake record to the table
+				f.Intrinsic.String.Build("Insert into {0} values('{1}','{2}','{3}','{4}',{5},{6},'{7}','{8}','{9}','{10}','{11}',{12},{13},{14},{15},{16},{17},{18})",v.Global.sCustomTable_WC,v.DataTable.dtWC_Temp(v.Local.iCnt).TopParent!FieldValTrim,v.Local.sRet(3),v.Local.sRet(1),v.DataTable.dtWC_Temp(v.Local.iCnt).PARENT!FieldValTrim,v.Local.iUpperBOMLevel,v.Local.sRet(2),v.DataTable.dtWC_Temp(v.Local.iCnt).ParentPosition!FieldValTrim,v.DataTable.dtWC_Temp(v.Local.iCnt).ParentPosition!FieldValTrim,v.Local.sRet(0),v.Local.sRet(4),v.DataTable.dtWC_Temp(v.Local.iCnt).WC!FieldValTrim,0,0,0,0,0,0,0,v.Local.sSQL)
+				
+				f.ODBC.Connection!conx.Execute(v.Local.sSQL)
+				'also to the datatable
+				f.Data.Datatable.AddRow("dtWC_Temp","PARENT",v.Local.sRet(1),"PART",v.DataTable.dtWC_Temp(v.Local.iCnt).PARENT!FieldValTrim,"levelBOM",v.Local.iUpperBOMLevel,"WC",v.DataTable.dtWC_Temp(v.Local.iCnt).WC!FieldValTrim,"Position",v.DataTable.dtWC_Temp(v.Local.iCnt).ParentPosition!FieldValTrim,"ParentPosition",v.Local.sRet(0),"TopParent",v.DataTable.dtWC_Temp(v.Local.iCnt).TopParent!FieldValTrim,"BomSeq",v.Local.sRet(3),"Quantity",v.Local.sRet(2),"BomNode",v.Local.sRet(4))
+			f.Intrinsic.Control.EndIf
+		f.Intrinsic.Control.EndIf
+	f.Intrinsic.Control.Next(v.Local.iCnt)
+	
+	'Mass Hours Rollup from bottom to top
+	f.Intrinsic.Control.For(v.Local.iCnt,7,0,-1)
+	
+	
+		f.Intrinsic.Math.Add(v.Local.iCnt,1,v.Local.i2)
+		
+		'get hours from total WCs hours from same level
+		f.Intrinsic.String.Build("update {1} g set Prod_Hrs = isnull((select sum(s.Act_Hrs) from {2} s where s.Position = g.Position and s.LevelBom = {0}),0) where LevelBom = {0}",v.Local.iCnt,v.Global.sCustomTable,v.Global.sCustomTable_WC,v.Local.sSQL)	
+		f.ODBC.Connection!conx.Execute(v.Local.sSQL)
+		
+		'get hours from total WCs hours from same level for 1 part (without quantity)
+		f.Intrinsic.String.Build("update {1} g set Prod_Hrs_Per_Part = isnull((select sum(s.Act_Hrs) from {2} s where s.Position = g.Position and s.LevelBom = {0}),0) where LevelBom = {0}",v.Local.iCnt,v.Global.sCustomTable,v.Global.sCustomTable_WC,v.Local.sSQL)	
+		f.ODBC.Connection!conx.Execute(v.Local.sSQL)
+		
+		'total hrs from WCs of lower level
+		f.Intrinsic.String.Build("update {2} g set g.Prod_Hrs_Temp = isnull((select sum(s.Act_Ave_Hrs) from {3} s where g.Position = s.ParentPosition and s.LevelBom = {0} group by g.PART),0)  where g.LevelBom = {1};",v.Local.i2,v.Local.iCnt,v.Global.sCustomTable,v.Global.sCustomTable_WC,v.Local.sSQL)
+		f.ODBC.Connection!conx.Execute(v.Local.sSQL)
+		
+		'sum hrs of same level and lower level
+		f.Intrinsic.String.Build("update {1} set Ave_Prod_Hrs = Prod_Hrs + Prod_Hrs_Temp where LevelBom = {0}",v.Local.iCnt,v.Global.sCustomTable,v.Local.sSQL)	
+		f.ODBC.Connection!conx.Execute(v.Local.sSQL)
+		
+		'sum hrs of same level and lower level for 1 part (without quantity)
+		f.Intrinsic.String.Build("update {1} set Ave_Hrs_Per_Part = Prod_Hrs_Per_Part + Prod_Hrs_Temp where LevelBom = {0}",v.Local.iCnt,v.Global.sCustomTable,v.Local.sSQL)	
+		f.ODBC.Connection!conx.Execute(v.Local.sSQL) 
+		
+		'Roll up hours to the same WC
+		f.Intrinsic.String.Build("update {2} g set g.Act_Ave_Hrs = isnull((select sum(s.Act_Ave_Hrs)  from {2} s where s.ParentPosition = g.Position and s.LevelBom = {0} and s.WC = g.WC group by g.Act_Ave_Hrs),0) * g.Quantity + g.Act_Hrs_Temp  where g.LevelBom = {1};",v.Local.i2,v.Local.iCnt,v.Global.sCustomTable_WC,v.Local.sSQL)	
+		f.ODBC.Connection!conx.Execute(v.Local.sSQL)
+		
+	
+		f.Intrinsic.String.Build("update {2} g set g.Est_Ave_Hrs = (select sum(s.Est_Ave_Hrs)  from {2} s where s.ParentPosition = g.Position and s.LevelBom = {0} and s.WC = g.WC group by g.Est_Ave_Hrs) + g.Est_Hrs_Temp  where g.LevelBom = {1};",v.Local.i2,v.Local.iCnt,v.Global.sCustomTable_WC,v.Local.sSQL)
+			
+		f.ODBC.Connection!conx.Execute(v.Local.sSQL)
+'		'Update unexpected null creation
+		f.Intrinsic.String.Build("update {0} set Est_Ave_Hrs = Est_Hrs_Temp where Est_Ave_Hrs is null",v.Global.sCustomTable_WC,v.Local.sSQL)	
+		f.ODBC.Connection!conx.Execute(v.Local.sSQL)
+'		'Update ave prod hours
+
+		f.Intrinsic.String.Build("update {0} set Est_Hrs = Est_Ave_Hrs ",v.Global.sCustomTable_WC,v.Local.sSQL)	
+		
+		f.ODBC.Connection!conx.Execute(v.Local.sSQL)
+		
+		
+		f.Intrinsic.String.Build("update {0} g set g.ORPHAN_NODE = 1 where g.levelBOM = {1} and (( g.WC in (Select s.WC from {0} s where s.ParentPosition = g.Position and s.levelBOM ={2})) or (g.WC+g.LevelBom in (select WC+min(LevelBom) from {0} group by WC)));",v.Global.sCustomTable_WC,v.Local.iCnt,v.Local.i2,v.Local.sSQL)
+
+		f.ODBC.Connection!conx.Execute(v.Local.sSQL)
+	f.Intrinsic.Control.Next(v.Local.iCnt)
+
+	
+	f.Data.DataTable.SetSeries("dtWC_Child","Ord","0",1)	
+	
+	f.Data.Dictionary.createFromDataTable("dictAveHrs","dtBOM","PART","PROD_HRS")
+	f.Data.Dictionary.SetDefaultReturn("dictAveHrs",0)
+	f.Data.Dictionary.Close("dictAveHrs")
+	
+	f.Data.Dictionary.CreateFromSQL("dUM","conx","Select RTRIM(PART) as PART,UM_INVENTORY from V_INVENTORY_MSTR")
+	f.Data.Dictionary.SetDefaultReturn("dUM","")
+	f.Data.DataTable.FillFromDictionary("dtBOM","dUM","PART","UM_INVENTORY")
+	f.Data.Dictionary.Close("dUM")
+	
+	f.Data.Dictionary.CreateFromSQL("dSource","conx","Select RTRIM(PART) as PART,RTRIM(CODE_SOURCE) from V_INVENTORY_MST2")
+	f.Data.Dictionary.SetDefaultReturn("dSource","")
+	f.Data.DataTable.FillFromDictionary("dtBOM","dSource","PART","SOURCE")
+	f.Data.Dictionary.Close("dSource")
+	
+	f.Data.Dictionary.CreateFromSQL("dCost","conx","Select RTRIM(PART) as PART,COST from V_INVENTORY_COST")
+	f.Data.Dictionary.SetDefaultReturn("dCost",0)
+	f.Data.DataTable.FillFromDictionary("dtBOM","dCost","PART","Unit_Cost")
+	f.Data.Dictionary.Close("dCost")
+	
+	f.Data.DataTable.AddColumn("dtBOM","Quantity_Temp","Float")
+	f.Data.Datatable.SetValue("dtBOM",-1,"Quantity_Temp",v.Screen.Form!txtQty.Text)
+	f.Data.Datatable.AddExpressionColumn("dtBOM","Quantity_Final","Float","[Quantity_Temp] * [Quantity]")
+	f.Data.Datatable.AddExpressionColumn("dtBOM","Real_Cost","Float","[Unit_Cost] * [Quantity_Final]")
+	
+	'BP
+	f.Intrinsic.String.Build("Select RTRIM(PART),Ave_Prod_Hrs from {0}",v.Global.sCustomTable,v.Local.sSQL)
+	f.Data.Dictionary.CreateFromSQL("dAvgHours","conx",v.Local.sSQL)
+	
+	f.Data.Dictionary.SetDefaultReturn("dAvgHours",0)
+	f.Data.DataTable.FillFromDictionary("dtBOM","dAvgHours","PART","ToT_Hrs")
+	f.Data.Dictionary.Close("dAvgHours")
+	
+
+	
+	'BP - add inventory_mst2.hrs_standard
+	f.Intrinsic.Control.If(v.Global.bLongPart)
+		F.Data.DataTable.AddDisplayPartColumn("dtBOM",0,"PART","DISPLAY_PART")
+	f.Intrinsic.Control.Else
+		F.Data.DataTable.CopyColumn("dtBOM","PART","DISPLAY_PART")
+	f.Intrinsic.Control.EndIf
+	
+	'BP - add PL
+	f.Data.DataTable.AddColumn("dtBOM","PL","String")
+	f.Data.Dictionary.CreateFromSQL("dPL","conx","Select RTRIM(PART),PRODUCT_LINE from V_INVENTORY_MSTR")
+	f.Data.Dictionary.SetDefaultReturn("dPL","")
+	f.Data.DataTable.FillFromDictionary("dtBOM","dPL","PART","PL")
+	f.Data.Dictionary.Close("dPL")
+	
+	'BP - add Desc
+	f.Data.Dictionary.CreateFromSQL("dDesc","conx","Select RTRIM(PART),DESCRIPTION from V_INVENTORY_MSTR")
+	f.Data.Dictionary.SetDefaultReturn("dDesc","")
+	f.Data.DataTable.FillFromDictionary("dtBOM","dDesc","PART","Description")
+	f.Data.Dictionary.Close("dDesc")
+	
+
+	'Set series for unique record value used later
+	f.Data.DataTable.AddColumn("dtBOM","Ord","Long",0)
+	f.Data.DataTable.SetSeries("dtBOM","Ord","0",1)
+	
+	'==========================BP
+	f.Intrinsic.Control.If(v.DataTable.dtWC.Exists,=,True)
+		f.Data.DataTable.Close("dtWC")
+	f.Intrinsic.Control.EndIf
+	
+	'f.Intrinsic.String.Build("select WC,'' as WC_Desc, sum(ACT_AVE_HRS*QUANTITY) as Act_Ave_Hrs,sum(Est_Ave_Hrs*QUANTITY) as Est_Ave_Hrs from {0} where WC+LevelBom in (select WC+min(LevelBom) from {0} group by WC) group by WC, LevelBom order by WC;",v.Global.sCustomTable_WC,v.Local.sSQL)
+	f.Intrinsic.String.Build("select WC,'' as WC_Desc, ACT_AVE_HRS as Act_Ave_Hrs,Est_Ave_Hrs as Est_Ave_Hrs from {0} where WC+LevelBom in (select WC+min(LevelBom) from {0} group by WC) group by WC,ACT_AVE_HRS,Est_Ave_Hrs order by WC;",v.Global.sCustomTable_WC,v.Local.sSQL)
+	
+	'f.Intrinsic.String.Build("select WC,'' as WC_Desc, sum(Act_Ave_Hrs) as Act_Ave_Hrs,sum(Est_Ave_Hrs) as Est_Ave_Hrs from {0} where ORPHAN_NODE = 1 group by WC order by WC ;",v.Global.sCustomTable_WC,v.Local.sSQL)
+	f.Data.Datatable.CreateFromSQL("dtWC","conx",v.Local.sSQL,true)
+	
+	f.Data.Dictionary.CreateFromSQL("dWCDesc","conx","Select MACHINE, RTRIM(WC_NAME) from V_WORKCENTERS")
+	f.Data.Dictionary.SetDefaultReturn("dWCDesc","")
+	f.Data.DataTable.FillFromDictionary("dtWC","dWCDesc","WC","WC_Desc")
+	f.Data.Dictionary.Close("dWCDesc")
+	
+	f.Data.Datatable.AddColumn("dtWC","Quantity","Float")
+	f.Data.Datatable.SetValue("dtWC",-1,"Quantity",v.Screen.Form!txtQty.Text)
+	f.Data.DataTable.AddExpressionColumn("dtWC","Act_Hrs","Float","[Act_Ave_Hrs]*[Quantity]")
+	f.Data.DataTable.AddExpressionColumn("dtWC","Est_Hrs","Float","[Est_Ave_Hrs]*[Quantity]")
+	f.Data.DataTable.AddExpressionColumn("dtWC","Est_Hrs_per_Part","Float","[Act_Ave_Hrs] - [Est_Ave_Hrs]")
+	f.Data.DataTable.AddExpressionColumn("dtWC","Act_vs_Est","Float","[Act_Hrs] - [Est_Hrs]")
+	
+	f.Intrinsic.Control.If(v.DataTable.dtSum_WC.Exists,=,True)
+		f.Data.DataTable.Close("dtSum_WC")
+	f.Intrinsic.Control.EndIf
+	
+	
+	f.Data.DataTable.SetSeries("dtBOM","Ord","0",1)
+	
+	
+	
+	
+	'		f.Intrinsic.String.Build("update {2} g set g.PROD_HRS = (select sum(s.AVE_PROD_HRS * s.QUANTITY) + g.Ave_Prod_Hrs from {2} s where s.ParentPosition = g.Position and s.LevelBom = {0} group by g.Ave_Prod_Hrs)  where g.LevelBom = {1};",v.Local.i2,v.Local.iCnt,v.Global.sCustomTable,v.Local.sSQL)
+'			
+'		f.ODBC.Connection!conx.Execute(v.Local.sSQL)
+''		'Update unexpected null creation
+'		f.Intrinsic.String.Build("update {0} set PROD_HRS = PROD_HRS_TEMP where PROD_HRS is null",v.Global.sCustomTable,v.Local.sSQL)	
+'		f.ODBC.Connection!conx.Execute(v.Local.sSQL)
+''		'Update ave prod hours
+'		
+'		f.Intrinsic.String.Build("update {0} set AVE_PROD_HRS = PROD_HRS ",v.Global.sCustomTable,v.Local.sSQL)	
+'		
+'		f.ODBC.Connection!conx.Execute(v.Local.sSQL)
+
+
+
+
+
+	
+
+	
+'	f.Intrinsic.String.Build("select RTRIM(PART), Act_Hrs from {0} where PART+levelBOM in (Select PART+max(levelBOM) from {0} group by PART)",v.Global.sCustomTable_WC,v.Local.sSQL)
+'	f.Data.Dictionary.CreateFromSQL("dAvgHours","conx",v.Local.sSQL)
+'	f.Data.Dictionary.SetDefaultReturn("dAvgHours",0)
+'	f.Data.Datatable.FillFromDictionary("dtBOM","dAvgHours","PART","ToT_Hrs")
+'	f.Data.Dictionary.Close("dAvgHours")
+	f.Data.Datatable.AddExpressionColumn("dtBOM","Final_ToT_Hrs","Float","[ToT_Hrs] * [Quantity_Final] ")
+	
+'==================================================================================
+	
+	f.Intrinsic.Control.CallSub("loadgvWC")	
+	f.Intrinsic.Control.CallSub(loadgvRouter)
+	'Format grid
+
+	F.Intrinsic.Control.If(V.DataTable.Bom.RowCount,>,0)
+		'Add gridview and format
+		gui.Form.gsBom.AddGridviewFromDatatable("GVMain","dtBOM")	
+		gui.Form.gsBom.SuspendLayout()
+			f.Intrinsic.Control.CallSub("Format_gsBom")	
+		gui.Form.gsBom.ResumeLayout()
+		gui.Form.gsBom.MainView("GVMain")
+		'f.Intrinsic.Control.CallSub("Deserialize")
+		v.Global.bLoad.Set(True)
+	F.Intrinsic.Control.EndIf
+	
+	'Visible the treeview
+	'gui.Form.trvBom.Visible(True)
+	gui.Form.gsBom.Visible(True)
+	
+	'Turn off indicators
+	gui.Form.lblLoading.Visible(False)
+	'Set tab Bom
+	'gui.Form.tab1.SetTab(0)
+	f.Intrinsic.UI.CloseWaitDialog
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5} Count {6}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,v.Local.iCnt,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.End
+F.Intrinsic.Control.EndTry
+Program.Sub.cmdLoad_Click.End
+
+
+Program.Sub.Add_Dictionaries.Start
+'Parameters: SourceTable,KeyColumn,ColumnList(ColumnName~DataType~DefaultValue),TargetTable
+f.Intrinsic.Control.Try
+	v.Local.sError.Declare
+	v.Local.sColumns.Declare
+	v.Local.sDataType.Declare
+	v.Local.iCnt.Declare
+	v.Local.sHold.Declare
+	v.Local.sCol.Declare
+	v.Local.sDefaultReturn.Declare
+	
+	f.Intrinsic.String.Split(v.Args.ColumnList,",",v.Local.sColumns)
+	f.Intrinsic.Control.For(v.Local.iCnt,0,v.Local.sColumns.UBound,1)
+		f.Intrinsic.String.Split(v.Local.sColumns(v.Local.iCnt),"~",v.Local.sHold)
+		v.Local.sCol.Set(v.Local.sHold(0).Trim)
+		v.Local.sDataType.Set(v.Local.sHold(1).Trim)
+		v.Local.sDefaultReturn.set(v.Local.sHold(2).Trim)
+		f.Data.Dictionary.CreateFromDataTable(v.Local.sCol,v.Args.SourceTable,v.Args.KeyColumn,v.Local.sCol)
+		f.Data.Dictionary.SetDefaultReturn(v.Local.sCol,v.Local.sDefaultReturn)
+		f.Data.DataTable.AddColumn(v.Args.TargetTable,v.Local.sCol,v.Local.sDataType,v.Local.sDefaultReturn)
+		f.Data.DataTable.FillFromDictionary(v.Args.TargetTable,v.Local.sCol,v.Args.KeyColumn,v.Local.sCol)
+		f.Data.Dictionary.Close(v.Local.sCol)	
+	f.Intrinsic.Control.Next(v.Local.iCnt)	
+	
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.End
+F.Intrinsic.Control.EndTry
+Program.Sub.Add_Dictionaries.End
+
+Program.Sub.Format_gsBom.Start
+f.Intrinsic.Control.Try
+	v.Local.sError.Declare
+	v.Local.sVisibleIndexColumn.Declare
+	v.Local.sLevelColumn.Declare
+	v.Local.iCnt.Declare
+	v.Local.sHold.Declare
+	v.Local.sInvisible.Declare
+	v.Local.sHeaderFormat.Declare
+	v.Local.sRouter.Declare
+	v.Local.sColor.Declare
+
+	'General format for the grid
+	gui.Form.gsBom.SetGridViewProperty("GVMain","MultiSelect",False)
+	gui.Form.gsBom.SetGridViewProperty("GVMain","AllowSort",True)
+	gui.Form.gsBom.SetGridViewProperty("GVMain","AllowFilter",True)
+	gui.Form.gsBom.SetGridViewProperty("GVMain","EnableAppearanceOddRow",False)
+	gui.Form.gsBom.SetGridViewProperty("GVMain","OptionsViewShowAutoFilterRow",True)
+	gui.Form.gsBom.SetGridViewProperty("GVMain","AllowColumnResizing",True)
+	gui.Form.gsBom.SetGridViewProperty("GVMain","OptionsViewColumnAutoWidth",False)	
+	gui.Form.gsBom.SetGridViewProperty("GVMain","ColumnPanelRowHeight","50")
+	gui.Form.gsBom.SetGridViewProperty("GVMain","OptionsViewShowGroupPanel",True)
+	
+	'Visible Index
+	v.Local.sVisibleIndexColumn.set("LevelChar,LevelBom,BomNode,Part,DISPLAY_PART,Description,PL,UM_Inventory,Category,Source,Frequency,Quantity,Quantity_Final,Prod_Hrs,Tot_Hrs,Final_Tot_Hrs,Unit_Cost,Real_Cost")
+	f.Intrinsic.Control.CallSub(FormatBulk,"GS","gsBom","GV","GVMain","sInputColumns",v.Local.sVisibleIndexColumn,"sProperty","VisibleIndex")
+	'Invisible
+	v.Local.sInvisible.Set("Ord,Part,Quantity_Temp,Prod_Hrs,TopParent,BomSeq,PARENT,Position,Position2,ParentPosition")
+	f.Intrinsic.Control.CallSub(FormatBulk,"GS","gsBom","GV","GVMain","sInputColumns",v.Local.sInvisible,"sProperty","Invisible")	
+	v.Local.sHeaderFormat.Set("LevelChar,LevelBom,BomNode,Part,DISPLAY_PART,Description,PL,UM_Inventory,Ctegory,Source,Frequency,Quantity_Final,Tot_Hrs,Prod_Hrs,Real_Cost")
+
+	'HeaderFontBold
+	f.Intrinsic.Control.CallSub(FormatBulk,"GS","gsBom","GV","GVMain","sInputColumns",v.Local.sVisibleIndexColumn,"sProperty","HeaderFontBold")
+	'HeaderWordWrap
+	f.Intrinsic.Control.CallSub(FormatBulk,"GS","gsBom","GV","GVMain","sInputColumns",v.Local.sVisibleIndexColumn,"sProperty","HeaderWordWrap")	
+	'HeaderAllign_Top
+	f.Intrinsic.Control.CallSub(FormatBulk,"GS","gsBom","GV","GVMain","sInputColumns",v.Local.sVisibleIndexColumn,"sProperty","HeaderAllign_Top")	
+	
+	'HeaderAllign_Center	
+	f.Intrinsic.Control.CallSub(FormatBulk,"GS","gsBom","GV","GVMain","sInputColumns",v.Local.sVisibleIndexColumn,"sProperty","HeaderAllign_Center")
+	'CellHAlignment_Center
+	f.Intrinsic.Control.CallSub(FormatBulk,"GS","gsBom","GV","GVMain","sInputColumns",v.Local.sVisibleIndexColumn,"sProperty","CellHAlignment_Center")
+	'CellHAlignment_Far
+	f.Intrinsic.Control.CallSub(FormatBulk,"GS","gsBom","GV","GVMain","sInputColumns","Quantity_Final,Tot_Hrs,Prod_Hrs,Final_Tot_Hrs,Frequency,Unit_Cost,Real_Cost","sProperty","CellHAlignment_Far")
+	'Caption	
+	f.Intrinsic.Control.CallSub(FormatBulk,"GS","gsBom","GV","GVMain","sInputColumns","LevelChar@Level,Part@Short Part No.,Display_Part@Part No.,UM_Inventory@UM,Tot_Hrs@Avg. Man. Hrs.,Final_Tot_Hrs@Total Man. Hrs.,PL@Product Line,Unit_Cost@Unit Cost,Real_Cost@Extended Cost,Quantity_Final@Required Quantity,Quantity@BOM Quantity","sProperty","Caption")	
+	
+	'For_RowCell_Click
+	f.Intrinsic.Control.CallSub(FormatBulk,"GS","gsBom","GV","GVMain","sInputColumns",v.Local.sVisibleIndexColumn,"sProperty","For_RowCell_Click")
+	'Width
+	f.Intrinsic.Control.CallSub(FormatBulk,"GS","gsBom","GV","GVMain","sInputColumns",v.Local.sVisibleIndexColumn,"sProperty","MinWidth","sWidth","80")
+	f.Intrinsic.Control.CallSub(FormatBulk,"GS","gsBom","GV","GVMain","sInputColumns","Quantity","sProperty","MinWidth","sWidth","50")
+	f.Intrinsic.Control.CallSub(FormatBulk,"GS","gsBom","GV","GVMain","sInputColumns","Quantity_Final","sProperty","MinWidth","sWidth","50")
+	f.Intrinsic.Control.CallSub(FormatBulk,"GS","gsBom","GV","GVMain","sInputColumns","LevelChar","sProperty","MinWidth","sWidth","60")
+	f.Intrinsic.Control.CallSub(FormatBulk,"GS","gsBom","GV","GVMain","sInputColumns","DISPLAY_PART","sProperty","MinWidth","sWidth","150")
+	f.Intrinsic.Control.CallSub(FormatBulk,"GS","gsBom","GV","GVMain","sInputColumns","Description","sProperty","MinWidth","sWidth","250")
+	'Color font blue for Rowcell click
+	f.Intrinsic.Control.CallSub(FormatBulk,"GS","gsBom","GV","GVMain","sInputColumns","DISPLAY_PART","sProperty","CellForeColor","sColor","Blue")
+	'Decimal
+	'gui.Form.gsBom.SetColumnProperty("GVMain","Std_Cost_M","DisplayCustomNumeric","###,###,##0.0000")
+	gui.Form.gsBom.SetColumnProperty("GVMain","Unit_Cost","DisplayCustomNumeric","###,###,##0.0000")
+	gui.Form.gsBom.SetColumnProperty("GVMain","Real_Cost","DisplayCustomNumeric","###,###,##0.0000")	
+	gui.Form.gsBom.SetColumnProperty("GVMain","Quantity","DisplayCustomNumeric","###,###,##0.00")	
+	gui.Form.gsBom.SetColumnProperty("GVMain","Quantity_Final","DisplayCustomNumeric","###,###,##0.00")	
+	gui.Form.gsBom.SetColumnProperty("GVMain","Prod_Hrs","DisplayCustomNumeric","###,###,##0.000")		
+	gui.Form.gsBom.SetColumnProperty("GVMain","Final_Tot_Hrs","DisplayCustomNumeric","###,###,##0.00")		
+	gui.Form.gsBom.SetColumnProperty("GVMain","Tot_Hrs","DisplayCustomNumeric","###,###,##0.00")		
+		
+	
+	'SummaryItem
+	'f.Intrinsic.Control.CallSub(FormatBulk,"GS","gsBom","GV","GVMain","sInputColumns","Std_Cost_M,Real_Cost","sProperty","SummaryItem")
+	'ToolTip	
+	'gui.Form.gsBom.SetColumnProperty("GVMain","TotalRunTime","ToolTip","Total Runtime in Hours = Quantity * Hours per Part")
+	
+	'Fixed left
+	gui.Form.gsBom.SetColumnProperty("GVMain","LevelChar","fixed","left")
+	
+'	gui.Form.gsBom.AddSummaryItem("GVMain","Tot_Hrs","","Sum","","","n")
+'	gui.Form.gsBom.AddSummaryItem("GVMain","Final_Tot_Hrs","","Sum","","","n")
+'	gui.Form.gsBom.AddSummaryItem("GVMain","Unit_Cost","","Sum","","","n")
+'	gui.Form.gsBom.AddSummaryItem("GVMain","Real_Cost","","Sum","","","n")
+
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.End
+F.Intrinsic.Control.EndTry
+Program.Sub.Format_gsBom.End
+
+Program.Sub.FormatBulk.Start
+f.Intrinsic.Control.Try
+	V.Local..BulkDeclareString(sError,sColumns,sHold,sDecimalMask,sDecimal)
+	v.Local..BulkDeclareLong(iCnt)
+	v.Local.sColor.Declare
+	
+	f.Intrinsic.String.Split(v.Args.sInputColumns,",",v.Local.sColumns)
+
+	F.Intrinsic.Control.SelectCase(v.Args.sProperty)
+		
+		F.Intrinsic.Control.Case("MinWidth")
+			f.Intrinsic.Control.For(v.Local.iCnt,0,v.Local.sColumns.UBound,1)
+				gui.Form.[v.Args.GS].SetColumnProperty(v.Args.GV,v.Local.sColumns(v.Local.iCnt),"MinWidth",v.Args.sWidth)
+			f.Intrinsic.Control.Next(v.Local.iCnt)
+			
+		F.Intrinsic.Control.Case("MaxWidth")
+			f.Intrinsic.Control.For(v.Local.iCnt,0,v.Local.sColumns.UBound,1)
+				gui.Form.[v.Args.GS].SetColumnProperty(v.Args.GV,v.Local.sColumns(v.Local.iCnt),"MaxWidth",v.Args.sWidth)				
+			f.Intrinsic.Control.Next(v.Local.iCnt)
+
+		F.Intrinsic.Control.Case("Width")
+			f.Intrinsic.Control.For(v.Local.iCnt,0,v.Local.sColumns.UBound,1)
+				gui.Form.[v.Args.GS].SetColumnProperty(v.Args.GV,v.Local.sColumns(v.Local.iCnt),"Width",v.Args.sWidth)				
+			f.Intrinsic.Control.Next(v.Local.iCnt)
+
+		F.Intrinsic.Control.Case("Invisible")
+			f.Intrinsic.Control.For(v.Local.iCnt,0,v.Local.sColumns.UBound,1)
+				gui.Form.[v.Args.GS].SetColumnProperty(v.Args.GV,v.Local.sColumns(v.Local.iCnt),"Visible",False)				
+			f.Intrinsic.Control.Next(v.Local.iCnt)
+
+		F.Intrinsic.Control.Case("VisibleIndex")
+			f.Intrinsic.Control.For(v.Local.iCnt,0,v.Local.sColumns.UBound,1)
+				gui.Form.[v.Args.GS].SetColumnProperty(v.Args.GV,v.Local.sColumns(v.Local.iCnt),"VisibleIndex",v.Local.iCnt)				
+			f.Intrinsic.Control.Next(v.Local.iCnt)
+
+		F.Intrinsic.Control.Case("Caption")
+			f.Intrinsic.Control.For(v.Local.iCnt,0,v.Local.sColumns.UBound,1)
+				f.Intrinsic.String.Split(v.Local.sColumns(v.Local.iCnt),"@",v.Local.sHold)
+				gui.Form.[v.Args.GS].SetColumnProperty(v.Args.GV,v.Local.sHold(0),"Caption",v.Local.sHold(1))			
+			f.Intrinsic.Control.Next(v.Local.iCnt)				
+
+		F.Intrinsic.Control.Case("HeaderAllign_Far")
+			f.Intrinsic.Control.For(v.Local.iCnt,0,v.Local.sColumns.UBound,1)
+				gui.Form.[v.Args.GS].SetColumnProperty(v.Args.GV,v.Local.sColumns(v.Local.iCnt),"HeaderHAlignment","Far")			
+			f.Intrinsic.Control.Next(v.Local.iCnt)
+
+		F.Intrinsic.Control.Case("HeaderAllign_Center")
+			f.Intrinsic.Control.For(v.Local.iCnt,0,v.Local.sColumns.UBound,1)
+				gui.Form.[v.Args.GS].SetColumnProperty(v.Args.GV,v.Local.sColumns(v.Local.iCnt),"HeaderHAlignment","Center")				
+			f.Intrinsic.Control.Next(v.Local.iCnt)
+
+		F.Intrinsic.Control.Case("HeaderAllign_Top")
+			f.Intrinsic.Control.For(v.Local.iCnt,0,v.Local.sColumns.UBound,1)
+				gui.Form.[v.Args.GS].SetColumnProperty(v.Args.GV,v.Local.sColumns(v.Local.iCnt),"HeaderVAlignment","Top")			
+			f.Intrinsic.Control.Next(v.Local.iCnt)
+
+		F.Intrinsic.Control.Case("HeaderFontBold")	
+			f.Intrinsic.Control.For(v.Local.iCnt,0,v.Local.sColumns.UBound,1)
+				gui.Form.[v.Args.GS].SetColumnProperty(v.Args.GV,v.Local.sColumns(v.Local.iCnt),"HeaderFontBold",True)			
+			f.Intrinsic.Control.Next(v.Local.iCnt)
+		
+		F.Intrinsic.Control.Case("HeaderWordWrap")	
+			f.Intrinsic.Control.For(v.Local.iCnt,0,v.Local.sColumns.UBound,1)
+				gui.Form.[v.Args.GS].SetColumnProperty(v.Args.GV,v.Local.sColumns(v.Local.iCnt),"HeaderWordWrap","Wrap")				
+			f.Intrinsic.Control.Next(v.Local.iCnt)
+
+		F.Intrinsic.Control.Case("CellHAlignment_Center")
+			f.Intrinsic.Control.For(v.Local.iCnt,0,v.Local.sColumns.UBound,1)
+				gui.Form.[v.Args.GS].SetColumnProperty(v.Args.GV,v.Local.sColumns(v.Local.iCnt),"CellHAlignment","Center")				
+			f.Intrinsic.Control.Next(v.Local.iCnt)
+
+		F.Intrinsic.Control.Case("CellHAlignment_Far")
+			f.Intrinsic.Control.For(v.Local.iCnt,0,v.Local.sColumns.UBound,1)
+				gui.Form.[v.Args.GS].SetColumnProperty(v.Args.GV,v.Local.sColumns(v.Local.iCnt),"CellHAlignment","Far")			
+			f.Intrinsic.Control.Next(v.Local.iCnt)
+
+		F.Intrinsic.Control.Case("Decimal")		
+			f.Intrinsic.String.Split(v.Args.sDecimal_Value,"_",v.Local.sDecimal)
+			f.Intrinsic.Control.If(v.local.sDecimal(1),=,"0")
+				v.Local.sDecimalMask.Set("###,###,###,##0")
+			f.Intrinsic.Control.Else				
+				f.Intrinsic.String.RPad("","0",v.Local.sDecimal(1),v.Local.sDecimalMask)
+				f.Intrinsic.String.Build("###,###,###,##0.{0}",v.Local.sDecimalMask,v.Local.sDecimalMask)
+			f.Intrinsic.Control.EndIf
+			f.Intrinsic.Control.For(v.Local.iCnt,0,v.Local.sColumns.UBound,1)
+				gui.Form.[v.Args.GS].SetColumnProperty(v.Args.GV,v.Local.sColumns(v.Local.iCnt),"DisplayCustomNumeric",v.Local.sDecimalMask)				
+			f.Intrinsic.Control.Next(v.Local.iCnt)
+			
+		f.Intrinsic.Control.Case("For_CellValue_Changed")
+			f.Intrinsic.Control.For(v.Local.iCnt,0,v.Local.sColumns.UBound,1)
+				gui.Form.[v.Args.GS].SetColumnProperty(v.Args.GV,v.Local.sColumns(v.Local.iCnt),"AllowEdit",True)	
+				gui.Form.[v.Args.GS].SetColumnProperty(v.Args.GV,v.Local.sColumns(v.Local.iCnt),"ReadOnly",False)				
+			f.Intrinsic.Control.Next(v.Local.iCnt)
+
+		f.Intrinsic.Control.Case("For_RowCell_Click")
+			f.Intrinsic.Control.For(v.Local.iCnt,0,v.Local.sColumns.UBound,1)
+				gui.Form.[v.Args.GS].SetColumnProperty(v.Args.GV,v.Local.sColumns(v.Local.iCnt),"AllowEdit",False)	
+				gui.Form.[v.Args.GS].SetColumnProperty(v.Args.GV,v.Local.sColumns(v.Local.iCnt),"ReadOnly",True)				
+			f.Intrinsic.Control.Next(v.Local.iCnt)
+
+		f.Intrinsic.Control.Case("DisplayCustomDatetime")
+			f.Intrinsic.Control.For(v.Local.iCnt,0,v.Local.sColumns.UBound,1)
+				gui.Form.[v.Args.GS].SetColumnProperty(v.Args.GV,v.Local.sColumns(v.Local.iCnt),"DisplayCustomDatetime","d")				
+			f.Intrinsic.Control.Next(v.Local.iCnt)
+
+		f.Intrinsic.Control.Case("SummaryItem")
+			f.Intrinsic.Control.For(v.Local.iCnt,0,v.Local.sColumns.UBound,1)
+				gui.Form.[v.Args.GS].AddSummaryItem(v.Args.GV,v.Local.sColumns(v.Local.iCnt),v.Local.sHold,"Sum","","","n")			
+			f.Intrinsic.Control.Next(v.Local.iCnt)
+			f.Intrinsic.String.Build("Sum_{0}",v.Local.sColumns(v.Local.iCnt),v.Local.sHold)
+
+		f.Intrinsic.Control.Case("FixedColumn_Left")
+			f.Intrinsic.Control.For(v.Local.iCnt,0,v.Local.sColumns.UBound,1)
+				gui.Form.[v.Args.GS].SetColumnProperty(v.Args.GV,v.Local.sColumns(v.Local.iCnt),"Fixed","Left")				
+			f.Intrinsic.Control.Next(v.Local.iCnt)
+
+		F.Intrinsic.Control.Case("CellBackColor")
+			f.Intrinsic.Control.For(v.Local.iCnt,0,v.Local.sColumns.UBound,1)
+				gui.Form.[v.Args.GS].SetColumnProperty(v.Args.GV,v.Local.sColumns(v.Local.iCnt),"CellBackColor",v.Args.sColor)			
+			f.Intrinsic.Control.Next(v.Local.iCnt)
+		
+		F.Intrinsic.Control.Case("CellForeColor")
+			f.Intrinsic.Control.For(v.Local.iCnt,0,v.Local.sColumns.UBound,1)
+				gui.Form.[v.Args.GS].SetColumnProperty(v.Args.GV,v.Local.sColumns(v.Local.iCnt),"CellForeColor",v.Args.sColor)			
+			f.Intrinsic.Control.Next(v.Local.iCnt)	
+
+	F.Intrinsic.Control.EndSelect		
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.End
+F.Intrinsic.Control.EndTry
+Program.Sub.FormatBulk.End
+
+
+Program.Sub.gsBom_RowCellClick.Start
+F.Intrinsic.Control.Try
+	V.Local.sError.Declare
+	v.Local.sNode.Declare
+	v.Local.sColumn.Declare
+	v.Local.sParams.Declare
+	V.Local.sPart.Declare
+	V.Local.sLoc.Declare
+	V.Local.sPath.Declare
+	V.Local.bExists.Declare
+	
+	f.Intrinsic.String.UCase(v.Args.Column,v.Local.sColumn)
+	Gui.Form.gsBom.GetCellValueByColumnName("GVMain","Part",V.Args.RowIndex,V.Local.sPart)
+	'Gui.Form.gsBom.GetCellValueByColumnName("GVMain","Location",V.Args.RowIndex,V.Local.sLoc)
+
+	
+	f.Intrinsic.Control.SelectCase(v.Local.sColumn)
+		f.Intrinsic.Control.Case("DISPLAY_PART")		
+            f.Intrinsic.Control.If(v.Screen.Form!optEdit.Value,=,True)
+            	 F.Data.DataTable.AddRow("300011","Part",V.Local.sPart,"Location",V.Local.sLoc,"Switch","M")
+            f.Intrinsic.Control.Else
+           		 F.Data.DataTable.AddRow("300011","Part",V.Local.sPart,"Location",V.Local.sLoc,"Switch","")
+            f.Intrinsic.Control.EndIf
+     
+			F.Intrinsic.Control.CallSub(300011Sync)
+
+	f.Intrinsic.Control.EndSelect	
+	
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.End
+F.Intrinsic.Control.EndTry
+Program.Sub.gsBom_RowCellClick.End
+
+Program.Sub.cmdExport_Click.Start
+F.Intrinsic.Control.Try
+	V.Local.sError.Declare	
+	V.Local.sFileExport.Declare
+	V.Local.bExcel.Declare
+	V.Local.bFileLocked.Declare
+	V.Local.sMsg.Declare
+	v.Local.sBom.Declare
+	v.Local.sGV.Declare
+
+	v.Local.sBom.Set(v.Screen.Form!txtPart17.Text.Trim)
+	F.Automation.MSExcel.CheckPresence(V.Local.bExcel)
+
+	F.Intrinsic.Control.If(V.Local.bExcel)
+		F.Intrinsic.String.Build("{0}\Bom_AveHours_Costs{1}_{2}.xlsx",V.Caller.LocalGssTempDir,v.Local.sBom.left20,v.Ambient.Now.FormatMMDDYYYYHhNnSs,V.Local.sFileExport)
+		F.Intrinsic.File.IsFileLocked(V.Local.sFileExport,V.Local.bFileLocked)
+		F.Intrinsic.Control.If(V.Local.bFileLocked)
+			F.Intrinsic.String.Build("File is already open. Please close and export again.{0}File: {1}",V.Ambient.NewLine,V.Local.sFileExport,V.Local.sMsg)
+			F.Intrinsic.UI.Msgbox(V.Local.sMsg,"File In Use")
+		F.Intrinsic.Control.Else
+			Gui.Form.gsBom.Export(V.Local.sFileExport,"xlsx")
+			F.Intrinsic.Task.ShellExec(0,"",V.Local.sFileExport,"","",1)
+		F.Intrinsic.Control.EndIf
+		
+		F.Intrinsic.String.Build("{0}\Router_{1}_{2}.xlsx",V.Caller.LocalGssTempDir,v.Local.sBom.left20,v.Ambient.Now.FormatMMDDYYYYHhNnSs,V.Local.sFileExport)
+		F.Intrinsic.File.IsFileLocked(V.Local.sFileExport,V.Local.bFileLocked)
+		F.Intrinsic.Control.If(V.Local.bFileLocked)
+			F.Intrinsic.String.Build("File is already open. Please close and export again.{0}File: {1}",V.Ambient.NewLine,V.Local.sFileExport,V.Local.sMsg)
+			F.Intrinsic.UI.Msgbox(V.Local.sMsg,"File In Use")
+		F.Intrinsic.Control.Else
+			Gui.Form.GSGC_Router.Export(V.Local.sFileExport,"xlsx")
+			F.Intrinsic.Task.ShellExec(0,"",V.Local.sFileExport,"","",1)
+		F.Intrinsic.Control.EndIf
+		
+		F.Intrinsic.String.Build("{0}\WCs_{1}_{2}.xlsx",V.Caller.LocalGssTempDir,v.Local.sBom.left20,v.Ambient.Now.FormatMMDDYYYYHhNnSs,V.Local.sFileExport)
+		F.Intrinsic.File.IsFileLocked(V.Local.sFileExport,V.Local.bFileLocked)
+		F.Intrinsic.Control.If(V.Local.bFileLocked)
+			F.Intrinsic.String.Build("File is already open. Please close and export again.{0}File: {1}",V.Ambient.NewLine,V.Local.sFileExport,V.Local.sMsg)
+			F.Intrinsic.UI.Msgbox(V.Local.sMsg,"File In Use")
+		F.Intrinsic.Control.Else
+			Gui.Form.GSGC_WC.Export(V.Local.sFileExport,"xlsx")
+			F.Intrinsic.Task.ShellExec(0,"",V.Local.sFileExport,"","",1)
+		F.Intrinsic.Control.EndIf
+		
+	F.Intrinsic.Control.Else
+		F.Intrinsic.String.Build("{0}\Bom_AveHours_Costs{1}_{2.csv",V.Caller.LocalGssTempDir,v.Local.sBom.left20,v.Ambient.Now.FormatMMDDYYYYHhNnSs,V.Local.sFileExport)
+		F.Intrinsic.File.IsFileLocked(V.Local.sFileExport,V.Local.bFileLocked)
+		F.Intrinsic.Control.If(V.Local.bFileLocked)
+			F.Intrinsic.String.Build("File is already open. Please close and export again.{0}File: {1}",V.Ambient.NewLine,V.Local.sFileExport,V.Local.sMsg)
+			F.Intrinsic.UI.Msgbox(V.Local.sMsg,"File In Use")
+		F.Intrinsic.Control.Else
+			Gui.Form.gsBom.Export(V.Local.sFileExport,"csv")
+		F.Intrinsic.Control.EndIf
+		F.Intrinsic.Task.ShellExec(0,"",V.Local.sFileExport,"","",1)
+		
+		F.Intrinsic.String.Build("{0}\Router_{1}_{2}.csv",V.Caller.LocalGssTempDir,v.Local.sBom.left20,v.Ambient.Now.FormatMMDDYYYYHhNnSs,V.Local.sFileExport)
+		F.Intrinsic.File.IsFileLocked(V.Local.sFileExport,V.Local.bFileLocked)
+		F.Intrinsic.Control.If(V.Local.bFileLocked)
+			F.Intrinsic.String.Build("File is already open. Please close and export again.{0}File: {1}",V.Ambient.NewLine,V.Local.sFileExport,V.Local.sMsg)
+			F.Intrinsic.UI.Msgbox(V.Local.sMsg,"File In Use")
+		F.Intrinsic.Control.Else
+			Gui.Form.GSGC_Router.Export(V.Local.sFileExport,"csv")
+			F.Intrinsic.Task.ShellExec(0,"",V.Local.sFileExport,"","",1)
+		F.Intrinsic.Control.EndIf
+		
+		F.Intrinsic.String.Build("{0}\WCs_{1}_{2}.csv",V.Caller.LocalGssTempDir,v.Local.sBom.left20,v.Ambient.Now.FormatMMDDYYYYHhNnSs,V.Local.sFileExport)
+		F.Intrinsic.File.IsFileLocked(V.Local.sFileExport,V.Local.bFileLocked)
+		F.Intrinsic.Control.If(V.Local.bFileLocked)
+			F.Intrinsic.String.Build("File is already open. Please close and export again.{0}File: {1}",V.Ambient.NewLine,V.Local.sFileExport,V.Local.sMsg)
+			F.Intrinsic.UI.Msgbox(V.Local.sMsg,"File In Use")
+		F.Intrinsic.Control.Else
+			Gui.Form.GSGC_WC.Export(V.Local.sFileExport,"csv")
+			F.Intrinsic.Task.ShellExec(0,"",V.Local.sFileExport,"","",1)
+		F.Intrinsic.Control.EndIf
+		
+	F.Intrinsic.Control.EndIf		
+	
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub("Unload")
+F.Intrinsic.Control.EndTry
+Program.Sub.cmdExport_Click.End
+
+
+Program.Sub.Serialize.Start
+F.Intrinsic.Control.Try
+	V.Local.sError.Declare
+	v.Local.sUserID.Declare
+	V.Local.sSerialize.Declare
+	v.Local.sSQL.Declare
+	
+	F.Global.Security.GetUserID(v.Caller.User,v.Caller.CompanyCode,v.Local.sUserID)
+	'Delete old registry records
+	F.ODBC.Connection!common.OpenConnection(V.Ambient.Ccon,V.Ambient.Cuser,V.Ambient.Cpass)
+	f.Intrinsic.String.Build("Delete From Gs_Registry Where User_ID = '{0}' and Company = '{1}' and Reg_ID = '6884' and Seq = '1001' and Program = '{2}';",v.Local.sUserID,v.Caller.CompanyCode,"GVMAIN",v.Local.sSQL)
+	F.ODBC.Connection!common.Execute(v.Local.sSQL)
+	f.Intrinsic.String.Build("Delete From Gs_Registry Where User_ID = '{0}' and Company = '{1}' and Reg_ID = '6884' and Seq = '1001' and Program = '{2}';",v.Local.sUserID,v.Caller.CompanyCode,"gvRouter",v.Local.sSQL)
+	F.ODBC.Connection!common.Execute(v.Local.sSQL)
+	f.Intrinsic.String.Build("Delete From Gs_Registry Where User_ID = '{0}' and Company = '{1}' and Reg_ID = '6884' and Seq = '1001' and Program = '{2}';",v.Local.sUserID,v.Caller.CompanyCode,"gVWC",v.Local.sSQL)
+	F.ODBC.Connection!common.Execute(v.Local.sSQL)
+	f.ODBC.Connection!common.Close
+
+	'GVMAIN
+	Gui.Form.gsBom.Serialize("GVMAIN",V.Local.sSerialize)
+	F.Global.Registry.AddValue(V.Caller.User,V.Caller.CompanyCode,"GVMAIN",6884,1001,False,"Serialize",False,0,-999.0,1/1/1980,12:00:00 AM,V.Local.sSerialize)
+	
+	'Router
+	Gui.Form.gsBom.Serialize("gvRouter",V.Local.sSerialize)
+	F.Global.Registry.AddValue(V.Caller.User,V.Caller.CompanyCode,"gvRouter",6884,1001,False,"Serialize",False,0,-999.0,1/1/1980,12:00:00 AM,V.Local.sSerialize)
+	
+	'WC
+	Gui.Form.gsBom.Serialize("gVWC",V.Local.sSerialize)
+	F.Global.Registry.AddValue(V.Caller.User,V.Caller.CompanyCode,"gVWC",6884,1001,False,"Serialize",False,0,-999.0,1/1/1980,12:00:00 AM,V.Local.sSerialize)
+	
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.End
+F.Intrinsic.Control.EndTry
+Program.Sub.Serialize.End
+
+Program.Sub.Deserialize.Start
+F.Intrinsic.Control.Try
+	V.Local.sError.Declare	
+	V.Local.sSerialize.Declare
+
+	'GVMAIN
+	F.Global.Registry.ReadValue(V.Caller.User,V.Caller.CompanyCode,"GVMAIN",6884,1001,6,"",V.Local.sSerialize)
+	F.Intrinsic.Control.If(V.Local.sSerialize.Trim,<>,"")
+		Gui.Form.gsBom.Deserialize(V.Local.sSerialize)
+	F.Intrinsic.Control.EndIf
+	
+	'Router
+	F.Global.Registry.ReadValue(V.Caller.User,V.Caller.CompanyCode,"gvRouter",6884,1001,6,"",V.Local.sSerialize)
+	F.Intrinsic.Control.If(V.Local.sSerialize.Trim,<>,"")
+		Gui.Form.gsBom.Deserialize(V.Local.sSerialize)
+	F.Intrinsic.Control.EndIf
+	
+	'WC
+	F.Global.Registry.ReadValue(V.Caller.User,V.Caller.CompanyCode,"gVWC",6884,1001,6,"",V.Local.sSerialize)
+	F.Intrinsic.Control.If(V.Local.sSerialize.Trim,<>,"")
+		Gui.Form.gsBom.Deserialize(V.Local.sSerialize)
+	F.Intrinsic.Control.EndIf
+	
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.End
+F.Intrinsic.Control.EndTry
+Program.Sub.Deserialize.End
+
+Program.Sub.cmdResetColumn_Click.Start
+F.Intrinsic.Control.Try
+	V.Local.sError.Declare
+	v.Local.sUserID.Declare
+	V.Local.sSerialize.Declare
+	v.Local.sSQL.Declare
+	
+	
+	F.Global.Security.GetUserID(v.Caller.User,v.Caller.CompanyCode,v.Local.sUserID)
+	'Delete old registry records
+	F.ODBC.Connection!common.OpenConnection(V.Ambient.Ccon,V.Ambient.Cuser,V.Ambient.Cpass)
+	f.Intrinsic.String.Build("Delete From Gs_Registry Where User_ID = '{0}' and Company = '{1}' and Reg_ID = '5872' and Seq = '1001' and Program = '{2}';",v.Local.sUserID,v.Caller.CompanyCode,"GVMAIN",v.Local.sSQL)
+	F.ODBC.Connection!common.Execute(v.Local.sSQL)
+	f.ODBC.Connection!common.Close
+	
+	v.Global.bLoad.Set(False)
+	f.Intrinsic.Control.CallSub("cmdLoad_Click")	
+	
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.End
+F.Intrinsic.Control.EndTry
+Program.Sub.cmdResetColumn_Click.End
+
+Program.Sub.CheckLongPart.Start
+	F.Global.General.ReadOption("400861",0,False,"0000",V.Global.bLongPart)
+	F.Intrinsic.Control.If(V.Global.bLongPart,=,False)
+		F.Global.General.ReadOption("400861",0,False,"0004",V.Global.bLongPart)
+	F.Intrinsic.Control.EndIf
+Program.Sub.CheckLongPart.End
+
+
+Program.Sub.Create_All_Index.Start
+f.Intrinsic.Control.Try
+	v.Local.sError.Declare
+	v.Local.bExist.Declare
+	v.Local.sSQL.Declare
+	v.Local.sIndex1.Declare
+	v.Local.sIndex2.Declare
+	v.Local.sIndex3.Declare
+	v.Local.sIndex4.Declare
+	v.Local.sIndex5.Declare
+	v.Local.sIndex6.Declare
+	v.Local.sIndex7.Declare	
+	
+	f.Intrinsic.String.Build("{0}01",v.Global.sCustomTable,v.Local.sIndex1)
+	f.Intrinsic.String.Build("{0}02",v.Global.sCustomTable,v.Local.sIndex2)
+	f.Intrinsic.String.Build("{0}03",v.Global.sCustomTable,v.Local.sIndex3)
+	f.Intrinsic.String.Build("{0}04",v.Global.sCustomTable,v.Local.sIndex4)
+	f.Intrinsic.String.Build("{0}05",v.Global.sCustomTable,v.Local.sIndex5)
+	f.Intrinsic.String.Build("{0}06",v.Global.sCustomTable,v.Local.sIndex6)
+	f.Intrinsic.String.Build("{0}07",v.Global.sCustomTable,v.Local.sIndex7)		
+
+'	f.Intrinsic.String.Build("CREATE INDEX {0}  on  {1} ( LevelBom )",v.Local.sIndex1,v.Global.sCustomTable,v.Local.sSQL)
+'	f.ODBC.Connection!conx.Execute(v.Local.sSQL)	
+	
+'	f.Intrinsic.String.Build("CREATE INDEX {0}  on  {1} ( Part )",v.Local.sIndex2,v.Global.sCustomTable,v.Local.sSQL)
+'	f.ODBC.Connection!conx.Execute(v.Local.sSQL)
+'	
+'			f.Intrinsic.String.Build("CREATE INDEX {0}  on  {1} ( TopParent, LevelBom, ParentPosition )",v.Local.sIndex3,v.Global.sCustomTable,v.Local.sSQL)
+'	f.ODBC.Connection!conx.Execute(v.Local.sSQL)
+'	
+'			f.Intrinsic.String.Build("CREATE INDEX {0}  on  {1} ( Ave_Prod_Hrs )",v.Local.sIndex4,v.Global.sCustomTable,v.Local.sSQL)
+'	f.ODBC.Connection!conx.Execute(v.Local.sSQL)
+'	
+'		f.Intrinsic.String.Build("CREATE INDEX {0}  on  {1} ( BomSeq )",v.Local.sIndex5,v.Global.sCustomTable,v.Local.sSQL)
+'	f.ODBC.Connection!conx.Execute(v.Local.sSQL)
+'	
+'			f.Intrinsic.String.Build("CREATE INDEX {0}  on  {1} ( TopParent )",v.Local.sIndex6,v.Global.sCustomTable,v.Local.sSQL)
+'	f.ODBC.Connection!conx.Execute(v.Local.sSQL)
+'	
+'			f.Intrinsic.String.Build("CREATE INDEX {0}  on  {1} ( Part, TopParent )",v.Local.sIndex7,v.Global.sCustomTable,v.Local.sSQL)
+'	f.ODBC.Connection!conx.Execute(v.Local.sSQL)
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.End 
+F.Intrinsic.Control.EndTry	
+Program.Sub.Create_All_Index.End
+
+Program.Sub.Check_Table.Start
+f.Intrinsic.Control.Try
+	v.Local.sError.Declare
+	v.Local.bExist.Declare
+	v.Local.sSQL.Declare
+	v.Local.sIndex1.Declare
+	v.Local.sIndex2.Declare
+	v.Local.sIndex3.Declare
+	v.Local.sIndex4.Declare
+	v.Local.sIndex5.Declare
+	v.Local.sIndex6.Declare
+	v.Local.sIndex7.Declare	
+	
+	
+	f.Intrinsic.String.Build("{0}01",v.Global.sCustomTable,v.Local.sIndex1)
+	f.Intrinsic.String.Build("{0}02",v.Global.sCustomTable,v.Local.sIndex2)
+	f.Intrinsic.String.Build("{0}03",v.Global.sCustomTable,v.Local.sIndex3)
+	f.Intrinsic.String.Build("{0}04",v.Global.sCustomTable,v.Local.sIndex4)
+	f.Intrinsic.String.Build("{0}05",v.Global.sCustomTable,v.Local.sIndex5)
+	f.Intrinsic.String.Build("{0}06",v.Global.sCustomTable,v.Local.sIndex6)
+	f.Intrinsic.String.Build("{0}07",v.Global.sCustomTable,v.Local.sIndex7)
+	Function.ODBC.Connection!conx.TableExists(v.Global.sCustomTable,v.Local.bExist)
+	
+	f.Intrinsic.Control.If(v.Local.bExist.Not)
+		f.Intrinsic.String.Build("CREATE TABLE {0} ( TopParent CHAR(20) DEFAULT '                    ', BomSeq CHAR(4) DEFAULT '    ', Parent CHAR(20) DEFAULT '                    ', Part CHAR(20) DEFAULT '                    ', LevelBom CHAR(1) DEFAULT ' ', Quantity NUMERIC(8,4) DEFAULT '0', Position CHAR(33) DEFAULT '                                 ', Position2 VARCHAR(33), ParentPosition VARCHAR(33),  BomNode VARCHAR(100), Prod_Hrs NUMERIC(16,6),Prod_Hrs_Temp NUMERIC(16,6),Ave_Prod_Hrs NUMERIC(16,6),  UM_Inventory CHAR(2) DEFAULT '  ', Category CHAR(1) DEFAULT ' ', Source CHAR(1) DEFAULT ' ',FREQUENCY Numeric(6,0),Cost NUMERIC(16,6),Cost2 NUMERIC(16,6), Extension2 NUMERIC(16,6),Prod_Hrs_Per_Part NUMERIC(16,6), Ave_Hrs_Per_Part NUMERIC(16,6) )",v.Global.sCustomTable,v.Local.sSQL)
+		f.ODBC.Connection!conx.Execute(v.Local.sSQL)
+		f.Intrinsic.Control.CallSub(Create_All_Index)
+	f.Intrinsic.Control.Else		
+		'Check if the Frequency column exist
+		f.Intrinsic.Control.CallSub("Check_Index","sTable",v.Global.sCustomTable,"sIndex","FREQUENCY")
+		f.Intrinsic.Control.If(v.Args.bExist,=,False)
+			F.Intrinsic.String.Build("Drop table {0}",v.Global.sCustomTable,v.Local.sSQL)
+			f.ODBC.Connection!conx.Execute(v.Local.sSQL)
+			f.Intrinsic.String.Build("CREATE TABLE {0} ( TopParent CHAR(20) DEFAULT '                    ', BomSeq CHAR(4) DEFAULT '    ', Parent CHAR(20) DEFAULT '                    ', Part CHAR(20) DEFAULT '                    ', LevelBom CHAR(1) DEFAULT ' ', Quantity NUMERIC(8,4) DEFAULT '0', Position CHAR(33) DEFAULT '                                 ', Position2 VARCHAR(33), ParentPosition VARCHAR(33),  BomNode VARCHAR(100), Prod_Hrs NUMERIC(16,6), Ave_Prod_Hrs NUMERIC(16,6),  UM_Inventory CHAR(2) DEFAULT '  ', Category CHAR(1) DEFAULT ' ', Source CHAR(1) DEFAULT ' ',FREQUENCY Numeric(6,0),Cost NUMERIC(16,6),Cost2 NUMERIC(16,6), Extension2 NUMERIC(16,6),Prod_Hrs_Per_Part NUMERIC(16,6), Ave_Hrs_Per_Part NUMERIC(16,6) )",v.Global.sCustomTable,v.Local.sSQL)
+			f.ODBC.Connection!conx.Execute(v.Local.sSQL)
+			f.Intrinsic.Control.CallSub(Create_All_Index)
+		f.Intrinsic.Control.EndIf			
+	f.Intrinsic.Control.EndIf
+	
+	f.Intrinsic.String.Build("{0}01",v.Global.sCustomTable_WC,v.Local.sIndex1)
+	f.Intrinsic.String.Build("{0}02",v.Global.sCustomTable_WC,v.Local.sIndex2)
+	f.Intrinsic.String.Build("{0}03",v.Global.sCustomTable_WC,v.Local.sIndex3)
+	f.Intrinsic.String.Build("{0}04",v.Global.sCustomTable_WC,v.Local.sIndex4)
+	f.Intrinsic.String.Build("{0}05",v.Global.sCustomTable_WC,v.Local.sIndex5)
+	f.Intrinsic.String.Build("{0}06",v.Global.sCustomTable_WC,v.Local.sIndex6)
+	f.Intrinsic.String.Build("{0}07",v.Global.sCustomTable_WC,v.Local.sIndex7)
+	Function.ODBC.Connection!conx.TableExists(v.Global.sCustomTable_WC,v.Local.bExist)
+	
+	f.Intrinsic.Control.If(v.Local.bExist.Not)
+		f.Intrinsic.String.Build("CREATE TABLE {0} ( TopParent CHAR(20) DEFAULT '                    ', BomSeq CHAR(4) DEFAULT '    ', Parent CHAR(20) DEFAULT '                    ', Part CHAR(20) DEFAULT '                    ', LevelBom CHAR(1) DEFAULT ' ', Quantity NUMERIC(8,4) DEFAULT '0', Position CHAR(33) DEFAULT '                                 ', Position2 VARCHAR(33), ParentPosition VARCHAR(33),  BomNode VARCHAR(100), WC CHAR(4), Act_Hrs NUMERIC(16,6),Act_Hrs_Temp NUMERIC(16,6),Act_Ave_Hrs NUMERIC(16,6),Est_Hrs NUMERIC(16,6),Est_Hrs_Temp NUMERIC(16,6),Est_Ave_Hrs NUMERIC(16,6),ORPHAN_NODE BIT NOT NULL)",v.Global.sCustomTable_WC,v.Local.sSQL)
+		f.ODBC.Connection!conx.Execute(v.Local.sSQL)
+		f.Intrinsic.Control.CallSub(Create_All_Index)
+'	f.Intrinsic.Control.Else		
+'		'Check if the Frequency column exist
+'		f.Intrinsic.Control.CallSub("Check_Index","sTable",v.Global.sCustomTable_WC,"sIndex","FREQUENCY")
+'		f.Intrinsic.Control.If(v.Args.bExist,=,False)
+'			F.Intrinsic.String.Build("Drop table {0}",v.Global.sCustomTable_WC,v.Local.sSQL)
+'			f.ODBC.Connection!conx.Execute(v.Local.sSQL)
+'			f.Intrinsic.String.Build("CREATE TABLE {0} ( TopParent CHAR(20) DEFAULT '                    ', BomSeq CHAR(4) DEFAULT '    ', Parent CHAR(20) DEFAULT '                    ', Part CHAR(20) DEFAULT '                    ', LevelBom CHAR(1) DEFAULT ' ', Quantity NUMERIC(8,4) DEFAULT '0', Position CHAR(33) DEFAULT '                                 ', Position2 VARCHAR(33), ParentPosition VARCHAR(33),  BomNode VARCHAR(100), WC CHAR(4), Act_Hrs NUMERIC(16,6),Act_Hrs_Temp NUMERIC(16,6),Act_Ave_Hrs NUMERIC(16,6),Est_Hrs NUMERIC(16,6),Est_Hrs_Temp NUMERIC(16,6),Est_Ave_Hrs NUMERIC(16,6))",v.Global.sCustomTable_WC,v.Local.sSQL)
+'			f.ODBC.Connection!conx.Execute(v.Local.sSQL)
+'			f.Intrinsic.Control.CallSub(Create_All_Index)
+'		f.Intrinsic.Control.EndIf			
+	f.Intrinsic.Control.EndIf
+	
+	
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.End 
+F.Intrinsic.Control.EndTry	
+Program.Sub.Check_Table.End
+
+Program.Sub.Check_Index.Start
+f.Intrinsic.Control.Try
+	v.Local.sError.Declare
+	v.Local.sSQL.Declare
+	v.Local.sRet.Declare
+	v.Local.bExist.Declare
+	
+	f.Intrinsic.String.Build("Select Xf$Name As TableName,F1.XE$Name As FieldName,F1.Xe$DataType as DataType FROM X$File INNER JOIN X$Field F1 On F1.XE$File = XF$ID WHERE Xf$Name = '{0}' and F1.XE$Name = '{1}'",v.Args.sTable,v.Args.sIndex,v.Local.sSQL)
+	f.ODBC.Connection!conx.ExecuteAndReturn(v.Local.sSQL,v.Local.sRet)
+	f.Intrinsic.Control.If(v.Ambient.ExecuteAndReturnEOF.Not)
+		v.Local.bExist.Set(True)
+	f.Intrinsic.Control.EndIf
+	f.Intrinsic.Variable.AddRV("bExist",v.Local.bExist)
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	f.Intrinsic.UI.Msgbox(v.Local.sError)
+	f.Intrinsic.Variable.AddRV("bExist",True)
+F.Intrinsic.Control.EndTry
+Program.Sub.Check_Index.End
+
+Program.Sub.loadgvRouter.Start
+f.Intrinsic.Control.Try
+	v.Local.sError.Declare
+	
+gui.Form.GSGC_Router.AddGridviewFromDatatable("gvRouter","dtRouter")
+Gui.Form.GSGC_Router.SuspendLayout()
+Gui.Form.GSGC_Router.SetGridViewProperty("gvRouter","MultiSelect",True)
+Gui.Form.GSGC_Router.SetGridViewProperty("gvRouter","AllowSort",True)
+Gui.Form.GSGC_Router.SetGridViewProperty("gvRouter","AllowFilter",True)
+Gui.Form.GSGC_Router.SetGridViewProperty("gvRouter","OptionsDetailShowDetailTabs",False)
+Gui.Form.GSGC_Router.SetGridViewProperty("gvRouter","OptionsViewShowGroupPanel",True)
+Gui.Form.GSGC_Router.SetGridViewProperty("gvRouter","OptionsViewColumnAutoWidth",False)	
+Gui.Form.GSGC_Router.SetGridViewProperty("gvRouter","OptionsFindAlwaysVisible",True)
+
+Gui.Form.GSGC_Router.SetColumnProperty("gvRouter","ROUTER","Caption","Router")
+Gui.Form.GSGC_Router.SetColumnProperty("gvRouter","ROUTER","AllowEdit",False)
+Gui.Form.GSGC_Router.SetColumnProperty("gvRouter","ROUTER","MinWidth","80")
+Gui.Form.GSGC_Router.SetColumnProperty("gvRouter","ROUTER","HeaderFontBold",True)
+Gui.Form.GSGC_Router.SetColumnProperty("gvRouter","ROUTER","HeaderHAlignment","Center")
+Gui.Form.GSGC_Router.SetColumnProperty("gvRouter","ROUTER","CellHAlignment","Center")
+
+
+
+Gui.Form.GSGC_Router.SetColumnProperty("gvRouter","LINE_ROUTER","Caption","Router Line")
+Gui.Form.GSGC_Router.SetColumnProperty("gvRouter","LINE_ROUTER","AllowEdit",False)
+Gui.Form.GSGC_Router.SetColumnProperty("gvRouter","LINE_ROUTER","MinWidth","80")
+Gui.Form.GSGC_Router.SetColumnProperty("gvRouter","LINE_ROUTER","HeaderFontBold",True)
+Gui.Form.GSGC_Router.SetColumnProperty("gvRouter","LINE_ROUTER","HeaderHAlignment","Center")
+Gui.Form.GSGC_Router.SetColumnProperty("gvRouter","LINE_ROUTER","CellHAlignment","Center")
+
+Gui.Form.GSGC_Router.SetColumnProperty("gvRouter","LMO","Caption","LMO")
+Gui.Form.GSGC_Router.SetColumnProperty("gvRouter","LMO","AllowEdit",False)
+Gui.Form.GSGC_Router.SetColumnProperty("gvRouter","LMO","MinWidth","60")
+Gui.Form.GSGC_Router.SetColumnProperty("gvRouter","LMO","HeaderFontBold",True)
+Gui.Form.GSGC_Router.SetColumnProperty("gvRouter","LMO","HeaderHAlignment","Center")
+Gui.Form.GSGC_Router.SetColumnProperty("gvRouter","LMO","CellHAlignment","Center")
+
+Gui.Form.GSGC_Router.SetColumnProperty("gvRouter","PART_WC_OUTSIDE","Visible","False")
+Gui.Form.GSGC_Router.SetColumnProperty("gvRouter","PART_WC_OUTSIDE","Caption","Part/ WC/ Outside")
+Gui.Form.GSGC_Router.SetColumnProperty("gvRouter","PART_WC_OUTSIDE","AllowEdit",False)
+Gui.Form.GSGC_Router.SetColumnProperty("gvRouter","PART_WC_OUTSIDE","MinWidth","120")
+Gui.Form.GSGC_Router.SetColumnProperty("gvRouter","PART_WC_OUTSIDE","HeaderFontBold",True)
+Gui.Form.GSGC_Router.SetColumnProperty("gvRouter","PART_WC_OUTSIDE","HeaderHAlignment","Center")
+Gui.Form.GSGC_Router.SetColumnProperty("gvRouter","PART_WC_OUTSIDE","CellHAlignment","Center")
+
+Gui.Form.GSGC_Router.SetColumnProperty("gvRouter","DISPLAY_PART","Caption","Part/ WC/ Outside")
+Gui.Form.GSGC_Router.SetColumnProperty("gvRouter","DISPLAY_PART","AllowEdit",False)
+Gui.Form.GSGC_Router.SetColumnProperty("gvRouter","DISPLAY_PART","MinWidth","120")
+Gui.Form.GSGC_Router.SetColumnProperty("gvRouter","DISPLAY_PART","HeaderFontBold",True)
+Gui.Form.GSGC_Router.SetColumnProperty("gvRouter","DISPLAY_PART","HeaderHAlignment","Center")
+Gui.Form.GSGC_Router.SetColumnProperty("gvRouter","DISPLAY_PART","CellHAlignment","Center")
+
+Gui.Form.GSGC_Router.SetColumnProperty("gvRouter","SET_UP","Caption","Set up")
+Gui.Form.GSGC_Router.SetColumnProperty("gvRouter","SET_UP","AllowEdit",False)
+Gui.Form.GSGC_Router.SetColumnProperty("gvRouter","SET_UP","MinWidth","80")
+Gui.Form.GSGC_Router.SetColumnProperty("gvRouter","SET_UP","HeaderFontBold",True)
+Gui.Form.GSGC_Router.SetColumnProperty("gvRouter","SET_UP","HeaderHAlignment","Center")
+Gui.Form.GSGC_Router.SetColumnProperty("gvRouter","SET_UP","CellHAlignment","Far")
+Gui.Form.GSGC_Router.SetColumnProperty("gvRouter","SET_UP","DisplayCustomNumeric","#,###,##0.00")
+
+Gui.Form.GSGC_Router.SetColumnProperty("gvRouter","RUN_TIME","Caption","Run Time")
+Gui.Form.GSGC_Router.SetColumnProperty("gvRouter","RUN_TIME","AllowEdit",False)
+Gui.Form.GSGC_Router.SetColumnProperty("gvRouter","RUN_TIME","MinWidth","80")
+Gui.Form.GSGC_Router.SetColumnProperty("gvRouter","RUN_TIME","HeaderFontBold",True)
+Gui.Form.GSGC_Router.SetColumnProperty("gvRouter","RUN_TIME","HeaderHAlignment","Center")
+Gui.Form.GSGC_Router.SetColumnProperty("gvRouter","RUN_TIME","CellHAlignment","Far")
+Gui.Form.GSGC_Router.SetColumnProperty("gvRouter","RUN_TIME","DisplayCustomNumeric","#,###,##0.00")
+
+Gui.Form.GSGC_Router.SetColumnProperty("gvRouter","RATE","Caption","Rate")
+Gui.Form.GSGC_Router.SetColumnProperty("gvRouter","RATE","AllowEdit",False)
+Gui.Form.GSGC_Router.SetColumnProperty("gvRouter","RATE","MinWidth","80")
+Gui.Form.GSGC_Router.SetColumnProperty("gvRouter","RATE","HeaderFontBold",True)
+Gui.Form.GSGC_Router.SetColumnProperty("gvRouter","RATE","HeaderHAlignment","Center")
+Gui.Form.GSGC_Router.SetColumnProperty("gvRouter","RATE","CellHAlignment","Far")
+Gui.Form.GSGC_Router.SetColumnProperty("gvRouter","RATE","DisplayCustomNumeric","#,###,##0.00")
+
+Gui.Form.GSGC_Router.SetColumnProperty("gvRouter","DESC_RT_LINE","Caption","Description")
+Gui.Form.GSGC_Router.SetColumnProperty("gvRouter","DESC_RT_LINE","AllowEdit",False)
+Gui.Form.GSGC_Router.SetColumnProperty("gvRouter","DESC_RT_LINE","MinWidth","150")
+Gui.Form.GSGC_Router.SetColumnProperty("gvRouter","DESC_RT_LINE","HeaderFontBold",True)
+Gui.Form.GSGC_Router.SetColumnProperty("gvRouter","DESC_RT_LINE","HeaderHAlignment","Center")
+'Gui.Form.GSGC_Router.SetColumnProperty("gvRouter","DESC_RT_LINE","CellHAlignment","Center")
+
+Gui.Form.GSGC_Router.SetColumnProperty("gvRouter","UM_INVENTORY","Caption","UM")
+Gui.Form.GSGC_Router.SetColumnProperty("gvRouter","UM_INVENTORY","AllowEdit",False)
+Gui.Form.GSGC_Router.SetColumnProperty("gvRouter","UM_INVENTORY","MinWidth","60")
+Gui.Form.GSGC_Router.SetColumnProperty("gvRouter","UM_INVENTORY","HeaderFontBold",True)
+Gui.Form.GSGC_Router.SetColumnProperty("gvRouter","UM_INVENTORY","HeaderHAlignment","Center")
+Gui.Form.GSGC_Router.SetColumnProperty("gvRouter","UM_INVENTORY","CellHAlignment","Center")
+
+Gui.Form.GSGC_Router.SetColumnProperty("gvRouter","LEAD_TIME","Caption","Lead Time")
+Gui.Form.GSGC_Router.SetColumnProperty("gvRouter","LEAD_TIME","AllowEdit",False)
+Gui.Form.GSGC_Router.SetColumnProperty("gvRouter","LEAD_TIME","MinWidth","80")
+Gui.Form.GSGC_Router.SetColumnProperty("gvRouter","LEAD_TIME","HeaderFontBold",True)
+Gui.Form.GSGC_Router.SetColumnProperty("gvRouter","LEAD_TIME","HeaderHAlignment","Center")
+Gui.Form.GSGC_Router.SetColumnProperty("gvRouter","LEAD_TIME","CellHAlignment","Center")
+
+Gui.Form.GSGC_Router.SetColumnProperty("gvRouter","PROJ_GROUP","Caption","Project Group")
+Gui.Form.GSGC_Router.SetColumnProperty("gvRouter","PROJ_GROUP","AllowEdit",False)
+Gui.Form.GSGC_Router.SetColumnProperty("gvRouter","PROJ_GROUP","MinWidth","100")
+Gui.Form.GSGC_Router.SetColumnProperty("gvRouter","PROJ_GROUP","HeaderFontBold",True)
+Gui.Form.GSGC_Router.SetColumnProperty("gvRouter","PROJ_GROUP","HeaderHAlignment","Center")
+Gui.Form.GSGC_Router.SetColumnProperty("gvRouter","PROJ_GROUP","CellHAlignment","Center")
+
+Gui.Form.GSGC_Router.SetColumnProperty("gvRouter","Quantity","Caption","Quantity")
+Gui.Form.GSGC_Router.SetColumnProperty("gvRouter","Quantity","AllowEdit",False)
+Gui.Form.GSGC_Router.SetColumnProperty("gvRouter","Quantity","MinWidth","80")
+Gui.Form.GSGC_Router.SetColumnProperty("gvRouter","Quantity","HeaderFontBold",True)
+Gui.Form.GSGC_Router.SetColumnProperty("gvRouter","Quantity","HeaderHAlignment","Center")
+Gui.Form.GSGC_Router.SetColumnProperty("gvRouter","Quantity","CellHAlignment","Far")
+
+'Gui.Form.GSGC_Router.SetColumnProperty("gvRouter","Ave_Hrs_M","Caption","Mat. Ave. Hrs")
+''Gui.Form.GSGC_Router.SetColumnProperty("gvRouter","Ave_Hrs_M","AllowEdit",False)
+'Gui.Form.GSGC_Router.SetColumnProperty("gvRouter","Ave_Hrs_M","MinWidth","100")
+'Gui.Form.GSGC_Router.SetColumnProperty("gvRouter","Ave_Hrs_M","HeaderFontBold",True)
+'Gui.Form.GSGC_Router.SetColumnProperty("gvRouter","Ave_Hrs_M","HeaderHAlignment","Center")
+'Gui.Form.GSGC_Router.SetColumnProperty("gvRouter","Ave_Hrs_M","CellHAlignment","Far")
+'Gui.Form.GSGC_Router.SetColumnProperty("gvRouter","Ave_Hrs_M","DisplayCustomNumeric","#,###,##0.00")
+
+Gui.Form.GSGC_Router.SetColumnProperty("gvRouter","Hrs_L","Caption","BOM Labor Avg. Hrs")
+Gui.Form.GSGC_Router.SetColumnProperty("gvRouter","Hrs_L","AllowEdit",False)
+Gui.Form.GSGC_Router.SetColumnProperty("gvRouter","Hrs_L","MinWidth","100")
+Gui.Form.GSGC_Router.SetColumnProperty("gvRouter","Hrs_L","HeaderFontBold",True)
+Gui.Form.GSGC_Router.SetColumnProperty("gvRouter","Hrs_L","HeaderHAlignment","Center")
+Gui.Form.GSGC_Router.SetColumnProperty("gvRouter","Hrs_L","CellHAlignment","Far")
+Gui.Form.GSGC_Router.SetColumnProperty("gvRouter","Hrs_L","DisplayCustomNumeric","#,###,##0.00")
+
+Gui.Form.GSGC_Router.SetColumnProperty("gvRouter","HoursPerPArt","Caption","Router Hrs. per Part")
+Gui.Form.GSGC_Router.SetColumnProperty("gvRouter","HoursPerPArt","AllowEdit",False)
+Gui.Form.GSGC_Router.SetColumnProperty("gvRouter","HoursPerPArt","MinWidth","100")
+Gui.Form.GSGC_Router.SetColumnProperty("gvRouter","HoursPerPArt","HeaderFontBold",True)
+Gui.Form.GSGC_Router.SetColumnProperty("gvRouter","HoursPerPArt","HeaderHAlignment","Center")
+Gui.Form.GSGC_Router.SetColumnProperty("gvRouter","HoursPerPArt","CellHAlignment","Far")
+Gui.Form.GSGC_Router.SetColumnProperty("gvRouter","HoursPerPArt","DisplayCustomNumeric","#,###,##0.00")
+
+Gui.Form.GSGC_Router.SetColumnProperty("gvRouter","TotalRunTime","Caption","Router Total RunTime")
+Gui.Form.GSGC_Router.SetColumnProperty("gvRouter","TotalRunTime","AllowEdit",False)
+Gui.Form.GSGC_Router.SetColumnProperty("gvRouter","TotalRunTime","MinWidth","100")
+Gui.Form.GSGC_Router.SetColumnProperty("gvRouter","TotalRunTime","HeaderFontBold",True)
+Gui.Form.GSGC_Router.SetColumnProperty("gvRouter","TotalRunTime","HeaderHAlignment","Center")
+Gui.Form.GSGC_Router.SetColumnProperty("gvRouter","TotalRunTime","CellHAlignment","Far")
+Gui.Form.GSGC_Router.SetColumnProperty("gvRouter","TotalRunTime","DisplayCustomNumeric","#,###,##0.00")
+gui.Form.GSGC_Router.ResumeLayout()
+gui.Form.GSGC_Router.MainView("gvRouter")
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.End
+F.Intrinsic.Control.EndTry
+Program.Sub.loadgvRouter.End
+
+Program.Sub.loadgvWC.Start
+f.Intrinsic.Control.Try
+	v.Local.sError.Declare
+	V.Local.iCnt.Declare
+gui.Form.GSGC_WC.AddGridviewFromDatatable("gVWC","dtWC")
+
+gui.Form.GSGC_WC.SetColumnProperty("gVWC","WC","Caption","WC")
+gui.Form.GSGC_WC.SetColumnProperty("gVWC","WC","AllowEdit","False")
+gui.Form.GSGC_WC.SetColumnProperty("gVWC","WC","ReadOnly","True")
+gui.Form.GSGC_WC.SetColumnProperty("gVWC","WC","HeaderHAlignment","Center")
+gui.Form.GSGC_WC.SetColumnProperty("gVWC","WC","HeaderFontBold",True)
+gui.Form.GSGC_WC.SetColumnProperty("gVWC","WC","HeaderHAlignment","center")
+gui.Form.GSGC_WC.SetColumnProperty("gVWC","WC","MinWidth","55")
+gui.Form.GSGC_WC.SetColumnProperty("gVWC","WC","CellHAlignment","center")
+
+gui.Form.GSGC_WC.SetColumnProperty("gVWC","WC_Desc","Caption","WC Description")
+gui.Form.GSGC_WC.SetColumnProperty("gVWC","WC_Desc","AllowEdit","False")
+gui.Form.GSGC_WC.SetColumnProperty("gVWC","WC_Desc","ReadOnly","True")
+gui.Form.GSGC_WC.SetColumnProperty("gVWC","WC_Desc","HeaderHAlignment","Center")
+gui.Form.GSGC_WC.SetColumnProperty("gVWC","WC_Desc","HeaderFontBold",True)
+gui.Form.GSGC_WC.SetColumnProperty("gVWC","WC_Desc","HeaderHAlignment","center")
+gui.Form.GSGC_WC.SetColumnProperty("gVWC","WC_Desc","MinWidth","120")
+
+'gui.Form.GSGC_WC.SetColumnProperty("gVWC","ToT_Pieces","Caption","WO Quantity")
+'gui.Form.GSGC_WC.SetColumnProperty("gVWC","ToT_Pieces","AllowEdit","False")
+'gui.Form.GSGC_WC.SetColumnProperty("gVWC","ToT_Pieces","ReadOnly","True")
+'gui.Form.GSGC_WC.SetColumnProperty("gVWC","ToT_Pieces","HeaderHAlignment","Center")
+'gui.Form.GSGC_WC.SetColumnProperty("gVWC","ToT_Pieces","HeaderFontBold",True)
+'gui.Form.GSGC_WC.SetColumnProperty("gVWC","ToT_Pieces","HeaderHAlignment","center")
+'gui.Form.GSGC_WC.SetColumnProperty("gVWC","ToT_Pieces","MinWidth","100")
+'gui.Form.GSGC_WC.SetColumnProperty("gVWC","ToT_Pieces","CellHAlignment","Far")
+
+gui.Form.GSGC_WC.SetColumnProperty("gVWC","Quantity","Caption","Quantity")
+gui.Form.GSGC_WC.SetColumnProperty("gVWC","Quantity","AllowEdit","False")
+gui.Form.GSGC_WC.SetColumnProperty("gVWC","Quantity","ReadOnly","True")
+gui.Form.GSGC_WC.SetColumnProperty("gVWC","Quantity","HeaderHAlignment","Center")
+gui.Form.GSGC_WC.SetColumnProperty("gVWC","Quantity","HeaderFontBold",True)
+gui.Form.GSGC_WC.SetColumnProperty("gVWC","Quantity","HeaderHAlignment","center")
+gui.Form.GSGC_WC.SetColumnProperty("gVWC","Quantity","MinWidth","100")
+gui.Form.GSGC_WC.SetColumnProperty("gVWC","Quantity","CellHAlignment","Far")
+
+'gui.Form.GSGC_WC.SetColumnProperty("gVWC","ToT_Act_Hours","Caption","Actual Hours")
+'gui.Form.GSGC_WC.SetColumnProperty("gVWC","ToT_Act_Hours","AllowEdit","False")
+'gui.Form.GSGC_WC.SetColumnProperty("gVWC","ToT_Act_Hours","ReadOnly","True")
+'gui.Form.GSGC_WC.SetColumnProperty("gVWC","ToT_Act_Hours","HeaderHAlignment","Center")
+'gui.Form.GSGC_WC.SetColumnProperty("gVWC","ToT_Act_Hours","HeaderFontBold",True)
+'gui.Form.GSGC_WC.SetColumnProperty("gVWC","ToT_Act_Hours","HeaderHAlignment","center")
+'gui.Form.GSGC_WC.SetColumnProperty("gVWC","ToT_Act_Hours","MinWidth","100")
+'gui.Form.GSGC_WC.SetColumnProperty("gVWC","ToT_Act_Hours","CellHAlignment","Far")
+
+'gui.Form.GSGC_WC.SetColumnProperty("gVWC","Tot_Est_Hours","Caption","Estimated Hours")
+'gui.Form.GSGC_WC.SetColumnProperty("gVWC","Tot_Est_Hours","AllowEdit","False")
+'gui.Form.GSGC_WC.SetColumnProperty("gVWC","Tot_Est_Hours","ReadOnly","True")
+'gui.Form.GSGC_WC.SetColumnProperty("gVWC","Tot_Est_Hours","HeaderHAlignment","Center")
+'gui.Form.GSGC_WC.SetColumnProperty("gVWC","Tot_Est_Hours","HeaderFontBold",True)
+'gui.Form.GSGC_WC.SetColumnProperty("gVWC","Tot_Est_Hours","HeaderHAlignment","center")
+'gui.Form.GSGC_WC.SetColumnProperty("gVWC","Tot_Est_Hours","MinWidth","100")
+'gui.Form.GSGC_WC.SetColumnProperty("gVWC","Tot_Est_Hours","CellHAlignment","Far")
+
+
+gui.Form.GSGC_WC.SetColumnProperty("gVWC","Est_Ave_Hrs","Caption","Estimated Hours per Part")
+gui.Form.GSGC_WC.SetColumnProperty("gVWC","Est_Ave_Hrs","AllowEdit","False")
+gui.Form.GSGC_WC.SetColumnProperty("gVWC","Est_Ave_Hrs","ReadOnly","True")
+gui.Form.GSGC_WC.SetColumnProperty("gVWC","Est_Ave_Hrs","HeaderHAlignment","Center")
+gui.Form.GSGC_WC.SetColumnProperty("gVWC","Est_Ave_Hrs","HeaderFontBold",True)
+gui.Form.GSGC_WC.SetColumnProperty("gVWC","Est_Ave_Hrs","HeaderHAlignment","center")
+gui.Form.GSGC_WC.SetColumnProperty("gVWC","Est_Ave_Hrs","MinWidth","100")
+gui.Form.GSGC_WC.SetColumnProperty("gVWC","Est_Ave_Hrs","CellHAlignment","Far")
+
+gui.Form.GSGC_WC.SetColumnProperty("gVWC","Est_Hrs","Caption","Total Est. Hours")
+gui.Form.GSGC_WC.SetColumnProperty("gVWC","Est_Hrs","AllowEdit","False")
+gui.Form.GSGC_WC.SetColumnProperty("gVWC","Est_Hrs","ReadOnly","True")
+gui.Form.GSGC_WC.SetColumnProperty("gVWC","Est_Hrs","HeaderHAlignment","Center")
+gui.Form.GSGC_WC.SetColumnProperty("gVWC","Est_Hrs","HeaderFontBold",True)
+gui.Form.GSGC_WC.SetColumnProperty("gVWC","Est_Hrs","HeaderHAlignment","center")
+gui.Form.GSGC_WC.SetColumnProperty("gVWC","Est_Hrs","MinWidth","100")
+gui.Form.GSGC_WC.SetColumnProperty("gVWC","Est_Hrs","CellHAlignment","Far")
+
+gui.Form.GSGC_WC.SetColumnProperty("gVWC","Act_Ave_Hrs","Caption","Actual Hours per Part")
+gui.Form.GSGC_WC.SetColumnProperty("gVWC","Act_Ave_Hrs","AllowEdit","False")
+gui.Form.GSGC_WC.SetColumnProperty("gVWC","Act_Ave_Hrs","ReadOnly","True")
+gui.Form.GSGC_WC.SetColumnProperty("gVWC","Act_Ave_Hrs","HeaderHAlignment","Center")
+gui.Form.GSGC_WC.SetColumnProperty("gVWC","Act_Ave_Hrs","HeaderFontBold",True)
+gui.Form.GSGC_WC.SetColumnProperty("gVWC","Act_Ave_Hrs","HeaderHAlignment","center")
+gui.Form.GSGC_WC.SetColumnProperty("gVWC","Act_Ave_Hrs","MinWidth","100")
+gui.Form.GSGC_WC.SetColumnProperty("gVWC","Act_Ave_Hrs","CellHAlignment","Far")
+
+gui.Form.GSGC_WC.SetColumnProperty("gVWC","Act_Hrs","Caption","Total Act. Hours")
+gui.Form.GSGC_WC.SetColumnProperty("gVWC","Act_Hrs","AllowEdit","False")
+gui.Form.GSGC_WC.SetColumnProperty("gVWC","Act_Hrs","ReadOnly","True")
+gui.Form.GSGC_WC.SetColumnProperty("gVWC","Act_Hrs","HeaderHAlignment","Center")
+gui.Form.GSGC_WC.SetColumnProperty("gVWC","Act_Hrs","HeaderFontBold",True)
+gui.Form.GSGC_WC.SetColumnProperty("gVWC","Act_Hrs","HeaderHAlignment","center")
+gui.Form.GSGC_WC.SetColumnProperty("gVWC","Act_Hrs","MinWidth","100")
+gui.Form.GSGC_WC.SetColumnProperty("gVWC","Act_Hrs","CellHAlignment","Far")
+
+gui.Form.GSGC_WC.SetColumnProperty("gVWC","Est_Hrs_per_Part","Caption","Deviation per Part")
+gui.Form.GSGC_WC.SetColumnProperty("gVWC","Est_Hrs_per_Part","AllowEdit","False")
+gui.Form.GSGC_WC.SetColumnProperty("gVWC","Est_Hrs_per_Part","ReadOnly","True")
+gui.Form.GSGC_WC.SetColumnProperty("gVWC","Est_Hrs_per_Part","HeaderHAlignment","Center")
+gui.Form.GSGC_WC.SetColumnProperty("gVWC","Est_Hrs_per_Part","HeaderFontBold",True)
+gui.Form.GSGC_WC.SetColumnProperty("gVWC","Est_Hrs_per_Part","HeaderHAlignment","center")
+gui.Form.GSGC_WC.SetColumnProperty("gVWC","Est_Hrs_per_Part","MinWidth","100")
+gui.Form.GSGC_WC.SetColumnProperty("gVWC","Est_Hrs_per_Part","CellHAlignment","Far")
+
+gui.Form.GSGC_WC.SetColumnProperty("gVWC","Act_vs_Est","Caption","Total Deviation")
+gui.Form.GSGC_WC.SetColumnProperty("gVWC","Act_vs_Est","AllowEdit","False")
+gui.Form.GSGC_WC.SetColumnProperty("gVWC","Act_vs_Est","ReadOnly","True")
+gui.Form.GSGC_WC.SetColumnProperty("gVWC","Act_vs_Est","HeaderHAlignment","Center")
+gui.Form.GSGC_WC.SetColumnProperty("gVWC","Act_vs_Est","HeaderFontBold",True)
+gui.Form.GSGC_WC.SetColumnProperty("gVWC","Act_vs_Est","HeaderHAlignment","center")
+gui.Form.GSGC_WC.SetColumnProperty("gVWC","Act_vs_Est","MinWidth","100")
+gui.Form.GSGC_WC.SetColumnProperty("gVWC","Act_vs_Est","CellHAlignment","Far")
+
+gui.Form.GSGC_WC.SetColumnProperty("gVWC","Est_Ave_Hrs","DisplayCustomNumeric","###,###,###,##0.00")
+gui.Form.GSGC_WC.SetColumnProperty("gVWC","Est_Hrs","DisplayCustomNumeric","###,###,###,##0.00")
+gui.Form.GSGC_WC.SetColumnProperty("gVWC","Act_Ave_Hrs","DisplayCustomNumeric","###,###,###,##0.00")
+gui.Form.GSGC_WC.SetColumnProperty("gVWC","Act_Hrs","DisplayCustomNumeric","###,###,###,##0.00")
+gui.Form.GSGC_WC.SetColumnProperty("gVWC","Est_Hrs_per_Part","DisplayCustomNumeric","###,###,###,##0.00")
+gui.Form.GSGC_WC.SetColumnProperty("gVWC","Act_vs_Est","DisplayCustomNumeric","###,###,###,##0.00")
+
+
+gui.Form.GSGC_WC.AddSummaryItem("gVWC","Est_Ave_Hrs","","Sum","","","n")
+gui.Form.GSGC_WC.AddSummaryItem("gVWC","Est_Hrs","","Sum","","","n")
+gui.Form.GSGC_WC.AddSummaryItem("gVWC","Act_Ave_Hrs","","Sum","","","n")
+gui.Form.GSGC_WC.AddSummaryItem("gVWC","Act_Hrs","","Sum","","","n")
+gui.Form.GSGC_WC.AddSummaryItem("gVWC","Est_Hrs_per_Part","","Sum","","","n")
+gui.Form.GSGC_WC.AddSummaryItem("gVWC","Act_vs_Est","","Sum","","","n")
+
+
+'F.Intrinsic.Control.For(V.Local.iCnt,0,V.DataTable.dtSum_WC.RowCount--,1)
+'	F.Intrinsic.Control.If(V.DataTable.dtSum_WC(V.Local.iCnt).Act_vs_Est!fieldValFloat,<,0)
+'		Gui.Form.GSGC_WC.setRowAppearance("gVWC",V.Local.iCnt,"BackColor","Salmon")
+'	F.Intrinsic.Control.EndIf
+'F.Intrinsic.Control.Next(V.Local.iCnt)
+	
+gui.Form.GSGC_WC.MainView("gVWC")
+	
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.End
+F.Intrinsic.Control.EndTry
+Program.Sub.loadgvWC.End
+Program.Sub.txtRev_KeyPress.Start
+Program.Sub.txtRev_KeyPress.End
+
+Program.Sub.Comments.Start
+${$0$}$$}$$}$11/8/2017 10:46:58 AM$}$False
+${$3$}$0$}$$}$0$}$-1$}$$}$12:00:00 AM$}$
+${$5$}$2.0.0.0$}$2
+${$6$}$bpham$}$20231108085109676$}$Di0riF4Q5RIv6jxva5zSWHXcUtmDbQeBNN/5htnxSdP6Weu1ErtUOnxB9TBuHXOY9tSsPcvjKks=
+Program.Sub.Comments.End
